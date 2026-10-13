@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Barlow_Condensed } from "next/font/google";
+import { Sora, IBM_Plex_Mono } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
+  weight: ["400", "600", "800"],
   display: "swap",
 });
 
-const barlow = Barlow_Condensed({
-  variable: "--font-barlow",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Marin Barroso – Portfolio mécanique & préparation auto",
+  title: {
+    default: "Marin Barroso – Portfolio mécanique & préparation auto",
+    template: "%s – Marin Barroso",
+  },
   description: "Portfolio de Marin Barroso, étudiant en Bachelor Sciences & Ingénierie spécialité Mécanique-production à Arts et Métiers Bordeaux.",
   keywords: ["mécanique automobile", "préparation course", "Arts et Métiers", "CAO", "SolidWorks", "CATIA", "soudure", "restauration moto"],
   authors: [{ name: "Marin Barroso" }],
@@ -30,8 +36,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${barlow.variable}`}>
-      <body className="min-h-screen">{children}</body>
+    <html lang="fr" className={`${sora.variable} ${plexMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

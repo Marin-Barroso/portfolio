@@ -281,12 +281,83 @@ export const content = {
     whatsappMessage: "Bonjour Marin, j'ai découvert votre portfolio et souhaiterais échanger avec vous au sujet d'une opportunité."
   },
 
-  navigation: {
-    links: [
-      { label: "Compétences", href: "#competences" },
-      { label: "Missions", href: "#missions" },
-      { label: "Parcours", href: "#parcours" },
-      { label: "Contact", href: "#contact" }
+  alternance: {
+    intro: "En 3e année de Bachelor, la formation se poursuit en contrat de professionnalisation. Je cherche une entreprise pour l'année 2026-2027.",
+    details: [
+      { label: "Contrat", value: "Contrat de professionnalisation (Bachelor 3e année)" },
+      { label: "Domaines visés", value: "Préparation automobile pour la course, mécanique automobile, atelier" },
+      { label: "Formation", value: "Bachelor Sciences et Ingénierie, Arts et Métiers Bordeaux-Talence" },
+      { label: "Mobilité", value: "Villenave d'Ornon, permis B et AM, véhiculé" }
     ]
-  }
+  },
+
+  // Rubriques « Compétences » : chaque catégorie reprend des compétences de skills.technical par leur nom
+  skillCategories: [
+    {
+      slug: "cao",
+      title: "CAO et conception",
+      intro: "Modélisation de pièces et d'ensembles, découverte en Fablab puis pratique en études.",
+      skills: ["Conception CAO", "SolidWorks", "CATIA V5"]
+    },
+    {
+      slug: "fabrication",
+      title: "Fabrication",
+      intro: "Soudure en production et usinage, en atelier professionnel et en école.",
+      skills: ["Soudage MIG", "Usinage CNC", "Usinage conventionnel"]
+    },
+    {
+      slug: "mecanique-electricite",
+      title: "Mécanique et électricité",
+      intro: "Entretien, diagnostic et restauration sur voiture et cyclomoteur.",
+      skills: [
+        "Mécanique et restauration automobile",
+        "Mécanique moto/cyclomoteur",
+        "Recherche de panne",
+        "Électricité véhicule (faisceaux)"
+      ]
+    },
+    {
+      slug: "langues-savoir-etre",
+      title: "Langues et savoir-être",
+      intro: "Ce qui ne se voit pas sur un plan : langues, organisation et relation client.",
+      skills: ["Gestion de planning et de chantiers", "Relation client"]
+    }
+  ],
+
+  // Projets perso : textes à confirmer par Marin avant publication
+  projects: [
+    {
+      slug: "moto-50",
+      title: "Restauration d'une moto 50 cm³",
+      intro: "Un cyclomoteur racheté en 2024 et remis en état de A à Z, mécanique et électricité.",
+      items: [
+        { title: "Restauration mécanique", kind: "Mission 3", text: "Révision, entretien et remplacement de la quasi-totalité des pièces.", tags: ["Mécanique moto", "Autonomie"], mission: "restauration-mecanique-moto-50" },
+        { title: "Restauration électrique", kind: "Mission 4", text: "Recherche de panne, réparation et fiabilisation du faisceau.", tags: ["Électricité", "Diagnostic"], mission: "restauration-electrique-moto-50" }
+      ]
+    },
+    {
+      slug: "impression-3d",
+      title: "Impression 3D",
+      intro: "À compléter : pièces conçues et imprimées.",
+      items: []
+    },
+    {
+      slug: "echecs",
+      title: "Jeu d'échecs",
+      intro: "À compléter : pièces d'échecs modélisées en 3D.",
+      items: []
+    },
+    {
+      slug: "applications",
+      title: "Applications",
+      intro: "À compléter : projets numériques.",
+      items: []
+    }
+  ],
+
+  links: [
+    { label: "Email", value: "marin.barroso@ensam.eu", href: "mailto:marin.barroso@ensam.eu" },
+    { label: "Téléphone", value: "07 67 46 70 70", href: "tel:+33767467070" },
+    { label: "GitHub", value: "marien20", href: "https://github.com/marien20" }
+  ]
 };
