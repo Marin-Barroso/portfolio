@@ -1,34 +1,9 @@
 import type { Metadata } from "next";
 import { Card, PageShell } from "@/components/ui";
+import { content } from "@/data/content";
 import { PLAQUETTE_URL } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Plaquette de formation" };
-
-// Synthèse du syllabus du Bachelor de Technologie (Arts et Métiers)
-const YEARS = [
-  {
-    year: "1re année",
-    title: "Les bases de l'ingénieur",
-    text: "Mathématiques, mécanique du point, électricité, premiers programmes en Python et Arduino. En atelier : lecture de plans, dessin technique, schémas cinématiques et réalisation de pièces simples par enlèvement de matière, en sécurité. Stage exécutant de 4 semaines.",
-  },
-  {
-    year: "2e année",
-    title: "Concevoir et industrialiser",
-    text: "Analyse fonctionnelle et cahier des charges, modélisation de mécanismes, choix et dimensionnement de solutions technologiques. Matériaux, énergétique, préparation de la fabrication (gamme d'usinage, fabrication additive) et métrologie. Stage technicien de 12 semaines.",
-  },
-  {
-    year: "3e année",
-    title: "Piloter en entreprise",
-    text: "Lean manufacturing, conduite et gestion de projet, ouverture scientifique et semaines thématiques. L'année se déroule en contrat de professionnalisation, en alternance entre l'école et l'entreprise.",
-  },
-];
-
-const PILLARS = [
-  { title: "Concevoir", text: "CAO, modélisation de systèmes et partage de données dans un environnement PLM." },
-  { title: "Réaliser", text: "Usinage, fabrication additive, avant-projets et gammes de fabrication." },
-  { title: "Contrôler", text: "Spécifications géométriques, gammes de contrôle, capabilité et cartes de contrôle." },
-  { title: "Organiser", text: "Lean, gestion de projet, management et communication, anglais sur les trois ans." },
-];
 
 export default function PlaquettePage() {
   return (
@@ -54,7 +29,7 @@ export default function PlaquettePage() {
 
       <h2 className="mb-4 text-xl font-extrabold">Trois années, trois étapes</h2>
       <ol className="mb-10 grid gap-5 md:grid-cols-3">
-        {YEARS.map((y) => (
+        {content.formation.years.map((y) => (
           <li key={y.year}>
             <Card className="h-full">
               <p className="label-mono">{y.year}</p>
@@ -67,7 +42,7 @@ export default function PlaquettePage() {
 
       <h2 className="mb-4 text-xl font-extrabold">Ce que j&apos;y apprends</h2>
       <div className="mb-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {PILLARS.map((p) => (
+        {content.formation.pillars.map((p) => (
           <Card key={p.title} hover>
             <h3 className="text-gradient text-lg font-extrabold">{p.title}</h3>
             <p className="mt-2 text-sm text-fg">{p.text}</p>

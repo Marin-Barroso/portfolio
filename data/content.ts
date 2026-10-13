@@ -359,5 +359,32 @@ export const content = {
     { label: "Email", value: "marin.barroso@ensam.eu", href: "mailto:marin.barroso@ensam.eu" },
     { label: "Téléphone", value: "07 67 46 70 70", href: "tel:+33767467070" },
     { label: "GitHub", value: "marien20", href: "https://github.com/marien20" }
-  ]
+  ],
+
+  // Synthèse du syllabus du Bachelor de Technologie (Arts et Métiers)
+  formation: {
+    years: [
+      {
+        year: "1re année",
+        title: "Les bases de l'ingénieur",
+        text: "Mathématiques, mécanique du point, électricité, premiers programmes en Python et Arduino. En atelier : lecture de plans, dessin technique, schémas cinématiques et réalisation de pièces simples par enlèvement de matière, en sécurité. Stage exécutant de 4 semaines.",
+      },
+      {
+        year: "2e année",
+        title: "Concevoir et industrialiser",
+        text: "Analyse fonctionnelle et cahier des charges, modélisation de mécanismes, choix et dimensionnement de solutions technologiques. Matériaux, énergétique, préparation de la fabrication (gamme d'usinage, fabrication additive) et métrologie. Stage technicien de 12 semaines.",
+      },
+      {
+        year: "3e année",
+        title: "Piloter en entreprise",
+        text: "Lean manufacturing, conduite et gestion de projet, ouverture scientifique et semaines thématiques. L'année se déroule en contrat de professionnalisation, en alternance entre l'école et l'entreprise.",
+      },
+    ],
+    pillars: [
+      { title: "Concevoir", text: "CAO, modélisation de systèmes et partage de données dans un environnement PLM." },
+      { title: "Réaliser", text: "Usinage, fabrication additive, avant-projets et gammes de fabrication." },
+      { title: "Contrôler", text: "Spécifications géométriques, gammes de contrôle, capabilité et cartes de contrôle." },
+      { title: "Organiser", text: "Lean, gestion de projet, management et communication, anglais sur les trois ans." },
+    ],
+  }
 };
