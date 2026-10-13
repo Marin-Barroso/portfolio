@@ -2,9 +2,13 @@ import missionsData from "./missions.json";
 import parcoursData from "./parcours.json";
 import skillsData from "./skills.json";
 
+// Les photos sont facultatives : une mission sans photo n'a pas ce champ dans le JSON
+export type MissionPhoto = { image: string; caption?: string };
+export type Mission = (typeof missionsData.missions)[number] & { photos?: MissionPhoto[] };
+
 // Missions, compétences et parcours sont dans des fichiers JSON modifiables depuis /admin
 export const content = {
-  missions: missionsData.missions,
+  missions: missionsData.missions as Mission[],
   skills: skillsData,
   timeline: parcoursData,
 

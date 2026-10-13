@@ -10,8 +10,19 @@ backend:
 locale: fr
 site_url: https://marin-barroso.github.io/portfolio/
 display_url: https://marin-barroso.github.io/portfolio/
-media_folder: public/images
-public_folder: /images
+media_folder: public/images/missions
+public_folder: /images/missions
+# Les photos sont converties en WebP et réduites à l'envoi pour garder un site rapide
+media_libraries:
+  default:
+    config:
+      max_file_size: 15000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 1600
+          height: 1600
 
 collections:
   - name: missions
@@ -48,6 +59,15 @@ collections:
                   - { name: highlights, label: Faits marquants, widget: text }
                   - { name: skills, label: "Ce que j'ai appris", widget: text }
                   - { name: liked, label: "Ce que j'ai aimé", widget: text }
+              - name: photos
+                label: Photos
+                label_singular: photo
+                widget: list
+                required: false
+                summary: "{{fields.caption}}"
+                fields:
+                  - { name: image, label: Photo, widget: image }
+                  - { name: caption, label: Légende, required: false }
 
   - name: competences
     label: Compétences

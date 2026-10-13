@@ -11,20 +11,19 @@ export const metadata: Metadata = {
 const SITE_URL = "https://marin-barroso.github.io/portfolio/";
 
 const { hero, contact, about, skills, timeline, missions, competenceTable, skillCategories, alternance, formation } = content;
-const MISSION_START = 5;
-const TOTAL = MISSION_START + missions.length;
-
+// Une fiche mission peut tenir sur plusieurs pages : la numérotation est faite par Chrome
+// (marges @page de print.css), le sommaire renvoie donc vers des liens internes
 const SUMMARY = [
-  { label: "Profil et recherche d'alternance", page: 2 },
-  { label: "Curriculum vitae", page: 3 },
-  { label: "Compétences", page: 4 },
-  ...missions.map((m, i) => ({ label: `Mission ${i + 1} · ${m.title}`, page: MISSION_START + i })),
-  { label: "Ma formation", page: TOTAL },
+  { label: "Profil et recherche d'alternance", id: "profil" },
+  { label: "Curriculum vitae", id: "cv" },
+  { label: "Compétences", id: "competences" },
+  ...missions.map((m, i) => ({ label: `Mission ${i + 1} · ${m.title}`, id: m.slug })),
+  { label: "Ma formation", id: "formation" },
 ];
 
-function Page({ n, section, large, children }: { n: number; section: string; large?: boolean; children: React.ReactNode }) {
+function Page({ id, section, large, children }: { id: string; section: string; large?: boolean; children: React.ReactNode }) {
   return (
-    <section className={`page${large ? " large" : ""}`}>
+    <section id={id} className={`page${large ? " large" : ""}`}>
       <header className="page-head">
         <span>
           <b>Marin Barroso</b> · Portfolio
@@ -32,12 +31,6 @@ function Page({ n, section, large, children }: { n: number; section: string; lar
         <span>{section}</span>
       </header>
       {children}
-      <footer className="page-foot">
-        <a href={SITE_URL}>marin-barroso.github.io/portfolio</a>
-        <span>
-          {n} / {TOTAL}
-        </span>
-      </footer>
     </section>
   );
 }
@@ -94,7 +87,7 @@ export default function PrintPortfolio() {
       </section>
 
       {/* 2. Profil */}
-      <Page n={2} section="Profil">
+      <Page id="profil" section="Profil">
         <div>
           <p className="kicker">Qui suis-je ?</p>
           <h2 className="title">Passionné de mécanique, à l&apos;aise en atelier comme au bureau</h2>
@@ -138,10 +131,10 @@ export default function PrintPortfolio() {
           <p className="h3">Sommaire</p>
           <ul className="list" style={{ gap: "1.2mm" }}>
             {SUMMARY.map((s) => (
-              <li key={s.label} style={{ display: "flex", gap: "3mm" }}>
-                <span>{s.label}</span>
-                <span style={{ flex: 1, borderBottom: "1px dotted var(--line)", marginBottom: "1.2mm" }} />
-                <b>{s.page}</b>
+              <li key={s.label}>
+                <a href={`#${s.id}`}>
+                  <span style={{ color: "var(--violet)", fontWeight: 800 }}>→</span> {s.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -149,7 +142,7 @@ export default function PrintPortfolio() {
       </Page>
 
       {/* 3. CV */}
-      <Page n={3} section="Curriculum vitae">
+      <Page id="cv" section="Curriculum vitae">
         <div>
           <p className="kicker">Curriculum vitae</p>
           <h2 className="title">Formation et expériences</h2>
@@ -197,7 +190,7 @@ export default function PrintPortfolio() {
       </Page>
 
       {/* 4. Compétences */}
-      <Page n={4} section="Compétences">
+      <Page id="competences" section="Compétences">
         <div>
           <p className="kicker">Compétences</p>
           <h2 className="title">Ce que je sais faire, et où je l&apos;ai appris</h2>
@@ -253,7 +246,7 @@ export default function PrintPortfolio() {
 
       {/* 5 à 8. Fiches mission */}
       {missions.map((m, i) => (
-        <Page key={m.slug} n={MISSION_START + i} large section={`Mission ${i + 1} / ${missions.length}`}>
+        <Page key={m.slug} id={m.slug} large section={`Mission ${i + 1} / ${missions.length}`}>
           <div>
             <p className="kicker">
               Mission {i + 1} · {m.type === "Pro" ? "Stage en entreprise" : "Projet personnel"}
@@ -306,6 +299,21 @@ export default function PrintPortfolio() {
               <p>{m.details.liked}</p>
             </div>
           </div>
+          {m.photos && m.photos.length > 0 && (
+            <div className="grid2">
+              {m.photos.slice(0, 2).map((p) => (
+                <figure key={p.image} style={{ margin: 0 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element -- page imprimée en PDF */}
+                  <img src={p.image} alt={p.caption || m.title} style={{ width: "100%", height: "42mm", objectFit: "cover", borderRadius: "3mm" }} />
+                  {p.caption && (
+                    <figcaption className="muted" style={{ fontSize: "8.5pt", marginTop: "1.5mm" }}>
+                      {p.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          )}
           <div>
             <p className="h3">Compétences mobilisées</p>
             <div className="tags">
@@ -318,7 +326,7 @@ export default function PrintPortfolio() {
       ))}
 
       {/* Dernière page : formation et contact */}
-      <Page n={TOTAL} section="Ma formation">
+      <Page id="formation" section="Ma formation">
         <div>
           <p className="kicker">Ma formation</p>
           <h2 className="title">Bachelor en Sciences et Ingénierie, mécanique-production</h2>

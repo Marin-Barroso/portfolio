@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card, KeyValues, PageShell, Tags } from "@/components/ui";
 import { content } from "@/data/content";
+import { asset } from "@/lib/site";
 
 export function generateStaticParams() {
   return content.missions.map((m) => ({ slug: m.slug }));
@@ -63,6 +64,23 @@ export default async function MissionPage({ params }: { params: Promise<{ slug: 
           </li>
         ))}
       </ol>
+
+      {m.photos && m.photos.length > 0 && (
+        <>
+          <h2 className="mb-4 mt-10 text-xl font-extrabold">En images</h2>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {m.photos.map((p) => (
+              <figure key={p.image} className="glass overflow-hidden !p-0">
+                <a href={asset(p.image)} target="_blank" rel="noopener noreferrer">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- export statique, images déjà optimisées à l'envoi */}
+                  <img src={asset(p.image)} alt={p.caption || m.title} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                </a>
+                {p.caption && <figcaption className="px-4 py-3 text-sm text-soft">{p.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </>
+      )}
 
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         <Card>

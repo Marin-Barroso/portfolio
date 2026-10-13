@@ -3,6 +3,9 @@ import { content } from "@/data/content";
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 // next/link ajoute le basePath tout seul, mais pas un <a download> vers un fichier de public/
+// Chemin d'un fichier de public/ (images envoyées depuis l'admin) avec le basePath
+export const asset = (path: string) => `${BASE_PATH}${path}`;
+
 export const PDF_URL = `${BASE_PATH}/portfolio-marin-barroso.pdf`;
 export const PDF_NAME = "Portfolio-Marin-Barroso.pdf";
 export const PLAQUETTE_URL = `${BASE_PATH}/plaquette-bachelor-mecanique-production.pdf`;

@@ -6,7 +6,7 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const FILES = ["data/missions.json", "data/skills.json", "data/parcours.json"];
 // Clés techniques (identifiants, liens, dates) à ne jamais corriger
-const SKIP_KEYS = new Set(["slug", "type", "category", "missions", "experiences", "year", "period", "duration", "isAutomotive"]);
+const SKIP_KEYS = new Set(["slug", "type", "category", "missions", "experiences", "year", "period", "duration", "isAutomotive", "image"]);
 // Mots inconnus du dictionnaire mais corrects
 const IGNORE = new Set(["cyclo", "cyclomoteur", "cyclomoteurs", "micro-pieux", "vidange", "faisceaux", "itec"]);
 // Catégories de fautes à corriger ; la typographie et le style sont laissés tels quels
