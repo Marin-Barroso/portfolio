@@ -1,0 +1,83 @@
+{
+  "education": [
+    {
+      "year": "En cours",
+      "title": "Bachelor en Sciences et Ingénierie",
+      "specialty": "Spécialité Mécanique-production",
+      "location": "Arts et Métiers Bordeaux"
+    },
+    {
+      "year": "2023",
+      "title": "Baccalauréat technologique",
+      "specialty": "Spécialité ITEC, mention Bien",
+      "location": "Lycée Alfred Kastler"
+    }
+  ],
+  "experiences": [
+    {
+      "year": "2026",
+      "duration": "3 mois",
+      "title": "Stage technicien assistant responsable du pôle mécanique",
+      "company": "Speed Motors, Mérignac",
+      "description": "Gestion du planning du pôle mécanique, gestion des chantiers, maintenance sur véhicule préparé, apprentissage de la gestion des délais, relation client.",
+      "isAutomotive": true,
+      "skills": [
+        "Gestion de planning et de chantiers",
+        "Relation client"
+      ]
+    },
+    {
+      "year": "2025",
+      "duration": "1 mois",
+      "title": "Stage opérateur de maintenance",
+      "company": "Garage LEZAMIS, Cadaujac",
+      "description": "Maintenance sur véhicule léger, recherche de panne.",
+      "isAutomotive": true,
+      "skills": [
+        "Mécanique et restauration automobile",
+        "Recherche de panne"
+      ]
+    },
+    {
+      "year": "2025",
+      "duration": "1 mois",
+      "title": "Commis de cuisine",
+      "company": "L'Escala, Espagne",
+      "description": "Service en salle, préparation d'ingrédients.",
+      "isAutomotive": false,
+      "skills": []
+    },
+    {
+      "year": "2023",
+      "duration": "1 mois",
+      "title": "Opérateur polyvalent saisonnier",
+      "company": "Aguila Mécanique, Martillac",
+      "description": "Soudure, soudure CNC, scierie.",
+      "isAutomotive": true,
+      "skills": [
+        "Soudage MIG",
+        "Usinage CNC"
+      ]
+    },
+    {
+      "year": "2022",
+      "duration": "1 mois",
+      "title": "Réceptionniste de commandes saisonnier",
+      "company": "Salad&Co, Villenave d'Ornon",
+      "description": "",
+      "isAutomotive": false,
+      "skills": []
+    },
+    {
+      "year": "2021",
+      "duration": "1 semaine",
+      "title": "Stage découverte en CAO",
+      "company": "Fablab Coh@bit",
+      "description": "Conception d'un mobilier, aide à un projet viticole, conception d'une vis et d'un écrou.",
+      "isAutomotive": false,
+      "skills": [
+        "Conception CAO"
+      ]
+    }
+  ]
+}

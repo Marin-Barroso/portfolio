@@ -17,7 +17,7 @@ export default async function CompetencePage({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const category = content.skillCategories.find((c) => c.slug === slug);
   if (!category) notFound();
-  const skills = category.skills.map((name) => content.skills.technical.find((s) => s.name === name)!).filter(Boolean);
+  const skills = content.skills.technical.filter((s) => s.category === category.slug);
 
   return (
     <PageShell crumbs={[{ label: "Compétences" }, { label: category.title }]} title={category.title} intro={category.intro}>
@@ -43,20 +43,24 @@ export default async function CompetencePage({ params }: { params: Promise<{ slu
           <Card key={s.name} hover>
             <h3 className="text-lg font-semibold">{s.name}</h3>
             <p className="label-mono mt-1">{s.level}</p>
-            {(s.linkedMissions.length > 0 || s.linkedExperiences.length > 0) && (
+            {(s.missions.length > 0 || s.experiences.length > 0) && (
               <ul className="mt-4 grid gap-1 text-sm">
-                {s.linkedMissions.map((i) => (
-                  <li key={`m${i}`}>
-                    <Link href={`/missions/${content.missions[i].slug}/`} className="text-aqua underline underline-offset-4">
-                      Mission : {content.missions[i].title}
-                    </Link>
-                  </li>
-                ))}
-                {s.linkedExperiences.map((i) => (
-                  <li key={`e${i}`} className="text-soft">
-                    Expérience : {content.timeline.experiences[i].title}, {content.timeline.experiences[i].company}
-                  </li>
-                ))}
+                {content.missions
+                  .filter((m) => s.missions.includes(m.slug))
+                  .map((m) => (
+                    <li key={m.slug}>
+                      <Link href={`/missions/${m.slug}/`} className="text-aqua underline underline-offset-4">
+                        Mission : {m.title}
+                      </Link>
+                    </li>
+                  ))}
+                {content.timeline.experiences
+                  .filter((e) => s.experiences.includes(e.title))
+                  .map((e) => (
+                    <li key={e.title} className="text-soft">
+                      Expérience : {e.title}, {e.company}
+                    </li>
+                  ))}
               </ul>
             )}
           </Card>

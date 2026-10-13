@@ -42,8 +42,9 @@ function Page({ n, section, large, children }: { n: number; section: string; lar
   );
 }
 
-function skill(name: string) {
-  return skills.technical.find((s) => s.name === name)!;
+// Numéros (1, 2…) des missions où une compétence a été pratiquée
+function missionNumbers(slugs: string[]) {
+  return missions.flatMap((m, i) => (slugs.includes(m.slug) ? [i + 1] : []));
 }
 
 export default function PrintPortfolio() {
@@ -206,19 +207,21 @@ export default function PrintPortfolio() {
             <div key={c.slug} className="box">
               <p className="h3">{c.title}</p>
               <ul className="list" style={{ gap: "1.8mm" }}>
-                {c.skills.map((name) => (
-                  <li key={name}>
-                    <b>{name}</b>
-                    <br />
-                    <span className="muted" style={{ fontSize: "9pt" }}>
-                      {skill(name).level}
-                      {skill(name).linkedMissions.length > 0 &&
-                        ` · mission${skill(name).linkedMissions.length > 1 ? "s" : ""} ${skill(name)
-                          .linkedMissions.map((i) => i + 1)
-                          .join(", ")}`}
-                    </span>
-                  </li>
-                ))}
+                {skills.technical
+                  .filter((s) => s.category === c.slug)
+                  .map((s) => {
+                    const nums = missionNumbers(s.missions);
+                    return (
+                      <li key={s.name}>
+                        <b>{s.name}</b>
+                        <br />
+                        <span className="muted" style={{ fontSize: "9pt" }}>
+                          {s.level}
+                          {nums.length > 0 && ` · mission${nums.length > 1 ? "s" : ""} ${nums.join(", ")}`}
+                        </span>
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
           ))}

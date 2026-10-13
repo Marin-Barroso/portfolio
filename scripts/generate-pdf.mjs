@@ -35,7 +35,16 @@ server.listen(0, () => {
   const url = `http://localhost:${server.address().port}/impression/`;
   execFile(
     browser,
-    ["--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--virtual-time-budget=15000", `--print-to-pdf=${TARGET}`, url],
+    [
+      "--headless=new",
+      "--disable-gpu",
+      // Les runners Linux de GitHub Actions n'autorisent pas le bac à sable de Chrome
+      ...(process.platform === "linux" ? ["--no-sandbox"] : []),
+      "--no-pdf-header-footer",
+      "--virtual-time-budget=15000",
+      `--print-to-pdf=${TARGET}`,
+      url,
+    ],
     (err) => {
       server.close();
       if (err) throw err;

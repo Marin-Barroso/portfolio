@@ -1,0 +1,128 @@
+{
+  "technical": [
+    {
+      "name": "Mécanique et restauration automobile",
+      "level": "Pratiqué en stage",
+      "category": "mecanique-electricite",
+      "missions": [
+        "revision-peugeot-106"
+      ],
+      "experiences": [
+        "Stage technicien assistant responsable du pôle mécanique",
+        "Stage opérateur de maintenance"
+      ]
+    },
+    {
+      "name": "Mécanique moto/cyclomoteur",
+      "level": "Pratiqué en projet perso",
+      "category": "mecanique-electricite",
+      "missions": [
+        "restauration-mecanique-moto-50",
+        "restauration-electrique-moto-50"
+      ],
+      "experiences": []
+    },
+    {
+      "name": "Recherche de panne",
+      "level": "Pratiqué en stage",
+      "category": "mecanique-electricite",
+      "missions": [
+        "restauration-electrique-moto-50"
+      ],
+      "experiences": [
+        "Stage opérateur de maintenance"
+      ]
+    },
+    {
+      "name": "Électricité véhicule (faisceaux)",
+      "level": "Pratiqué en projet perso",
+      "category": "mecanique-electricite",
+      "missions": [
+        "restauration-electrique-moto-50"
+      ],
+      "experiences": []
+    },
+    {
+      "name": "Soudage MIG",
+      "level": "Pratiqué en stage",
+      "category": "fabrication",
+      "missions": [
+        "soudure-micro-pieux"
+      ],
+      "experiences": [
+        "Opérateur polyvalent saisonnier"
+      ]
+    },
+    {
+      "name": "Usinage CNC",
+      "level": "Pratiqué en stage",
+      "category": "fabrication",
+      "missions": [],
+      "experiences": [
+        "Opérateur polyvalent saisonnier"
+      ]
+    },
+    {
+      "name": "Usinage conventionnel",
+      "level": "Pratiqué en stage",
+      "category": "fabrication",
+      "missions": [],
+      "experiences": []
+    },
+    {
+      "name": "SolidWorks",
+      "level": "Pratiqué en études",
+      "category": "cao",
+      "missions": [],
+      "experiences": []
+    },
+    {
+      "name": "CATIA V5",
+      "level": "Pratiqué en études",
+      "category": "cao",
+      "missions": [],
+      "experiences": []
+    },
+    {
+      "name": "Gestion de planning et de chantiers",
+      "level": "Pratiqué en stage",
+      "category": "langues-savoir-etre",
+      "missions": [],
+      "experiences": [
+        "Stage technicien assistant responsable du pôle mécanique"
+      ]
+    },
+    {
+      "name": "Relation client",
+      "level": "Pratiqué en stage",
+      "category": "langues-savoir-etre",
+      "missions": [],
+      "experiences": [
+        "Stage technicien assistant responsable du pôle mécanique"
+      ]
+    },
+    {
+      "name": "Conception CAO",
+      "level": "Pratiqué en stage",
+      "category": "cao",
+      "missions": [],
+      "experiences": [
+        "Stage découverte en CAO"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "Français",
+      "level": "Natif"
+    },
+    {
+      "name": "Anglais",
+      "level": "A2"
+    },
+    {
+      "name": "Espagnol",
+      "level": "A1"
+    }
+  ]
+}

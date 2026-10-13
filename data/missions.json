@@ -1,0 +1,156 @@
+{
+  "missions": [
+    {
+      "slug": "revision-peugeot-106",
+      "title": "Révision complète sur une Peugeot 106",
+      "type": "Pro",
+      "location": "Garage LEZAMIS, Cadaujac",
+      "period": "03/02 – 28/02/2025",
+      "duration": "45 min",
+      "year": "2025",
+      "tags": [
+        "Révision",
+        "Entretien",
+        "Méthodologie"
+      ],
+      "skills": [
+        "Mécanique et restauration automobile",
+        "Recherche de panne"
+      ],
+      "details": {
+        "post": "Exécutant",
+        "mission": "Révision complète + entretien classique",
+        "means": "Garage professionnel + accompagnement par un mécanicien",
+        "constraints": "Le temps",
+        "steps": [
+          {
+            "caption": "Vérification de l'état du véhicule"
+          },
+          {
+            "caption": "Intervention"
+          },
+          {
+            "caption": "Entretien nécessaire du véhicule (vidange)"
+          }
+        ],
+        "highlights": "Le niveau de propreté des véhicules est souvent contraignant.",
+        "skills": "Méthodologie de vérification d'un véhicule ; réparer et tester l'état du véhicule ; oser demander de l'aide.",
+        "liked": "L'autonomie donnée à un simple stagiaire une fois qu'il a été formé, mais en gardant un certain accompagnement en cas de nécessité."
+      }
+    },
+    {
+      "slug": "soudure-micro-pieux",
+      "title": "Soudure de plots de micro-pieux",
+      "type": "Pro",
+      "location": "Aguila Mécanique, Martillac",
+      "period": "27/06 – 30/07/2023",
+      "duration": "8h à 16h",
+      "year": "2023",
+      "tags": [
+        "Soudure MIG",
+        "Production",
+        "Précision"
+      ],
+      "skills": [
+        "Soudage MIG",
+        "Usinage CNC"
+      ],
+      "details": {
+        "post": "Exécutant",
+        "mission": "Soudure MIG d'un plot de micro-pieux",
+        "means": "Atelier d'usinage professionnel",
+        "constraints": "Le débit de pièces",
+        "steps": [
+          {
+            "caption": "Mise en place des 2 pièces"
+          },
+          {
+            "caption": "Soudure"
+          },
+          {
+            "caption": "Vérification de la pièce"
+          }
+        ],
+        "highlights": "Nécessité d'un haut débit de pièces et précision requise pour la mise en place.",
+        "skills": "Soudure, vitesse de fabrication.",
+        "liked": "La pédagogie avec laquelle on m'a appris à souder."
+      }
+    },
+    {
+      "slug": "restauration-mecanique-moto-50",
+      "title": "Restauration mécanique d'une moto 50 cm³",
+      "type": "Perso",
+      "location": "Projet personnel",
+      "period": "Depuis le 31/07/2024",
+      "duration": "Projet en cours",
+      "year": "2024",
+      "tags": [
+        "Restauration",
+        "Mécanique moto",
+        "Autonomie"
+      ],
+      "skills": [
+        "Mécanique moto/cyclomoteur"
+      ],
+      "details": {
+        "post": "Autodidacte",
+        "mission": "Révision + entretien + réparation",
+        "means": "Outillage amateur, amis pour aider",
+        "constraints": "Coût, temps, météo, apprentissage en cours de route",
+        "steps": [
+          {
+            "caption": "Rapatriement du cyclo + état des lieux"
+          },
+          {
+            "caption": "Réparation et remplacement des pièces"
+          },
+          {
+            "caption": "Vérification, fiabilisation et test"
+          }
+        ],
+        "highlights": "État du parc cyclomoteur en France, il a fallu refaire la quasi-totalité de la moto.",
+        "skills": "Entretien d'un cyclomoteur, réparation de pièces, mécanique sur cyclo.",
+        "liked": "Apprendre et découvrir la mécanique cyclomoteur, ce qui a confirmé mon envie de travailler dans ce domaine."
+      }
+    },
+    {
+      "slug": "restauration-electrique-moto-50",
+      "title": "Restauration du système électrique d'une moto 50 cm³",
+      "type": "Perso",
+      "location": "Projet personnel",
+      "period": "Depuis le 31/07/2024",
+      "duration": "Projet en cours",
+      "year": "2024",
+      "tags": [
+        "Électricité",
+        "Diagnostic",
+        "Faisceaux"
+      ],
+      "skills": [
+        "Mécanique moto/cyclomoteur",
+        "Recherche de panne",
+        "Électricité véhicule (faisceaux)"
+      ],
+      "details": {
+        "post": "Autodidacte",
+        "mission": "Recherche de panne + réparation + test",
+        "means": "Outillage amateur, amis pour aider",
+        "constraints": "Manque de connaissances, coût, temps, météo, apprentissage en cours de route",
+        "steps": [
+          {
+            "caption": "État des lieux du faisceau électrique"
+          },
+          {
+            "caption": "Réparation des défauts et amélioration"
+          },
+          {
+            "caption": "Test et fiabilisation du faisceau"
+          }
+        ],
+        "highlights": "Malgré l'âge du cyclo, l'état électrique était relativement bon.",
+        "skills": "Restauration électrique d'un cyclomoteur, réparation de faisceaux électriques.",
+        "liked": "Découvrir le monde de l'électricité dans la mécanique."
+      }
+    }
+  ]
+}

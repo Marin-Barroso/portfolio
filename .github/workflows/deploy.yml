@@ -30,6 +30,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Régénère le PDF à partir des données (modifiées éventuellement depuis /admin)
+      - name: Generate PDF
+        run: npm run pdf
+
       - name: Build
         run: npm run build
         env:

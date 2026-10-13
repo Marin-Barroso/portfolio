@@ -1,0 +1,108 @@
+# Interface d'administration (Sveltia CMS) : chaque enregistrement crée un commit sur main,
+# ce qui relance le déploiement GitHub Pages et régénère le PDF.
+backend:
+  name: github
+  repo: Marin-Barroso/portfolio
+  branch: main
+  commit_messages:
+    update: "Admin : met à jour {{path}}"
+
+locale: fr
+site_url: https://marin-barroso.github.io/portfolio/
+display_url: https://marin-barroso.github.io/portfolio/
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: missions
+    label: Missions
+    files:
+      - name: missions
+        label: Fiches mission
+        file: data/missions.json
+        fields:
+          - name: missions
+            label: Missions
+            label_singular: mission
+            widget: list
+            summary: "{{fields.title}} ({{fields.type}}, {{fields.year}})"
+            fields:
+              - { name: slug, label: "Identifiant dans l'adresse", hint: "Minuscules et tirets, sans accent (ex. : vidange-clio). Ne pas le changer ensuite.", pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Minuscules, chiffres et tirets uniquement"] }
+              - { name: title, label: Titre }
+              - { name: type, label: Type, widget: select, options: [{ label: "Mission pro (stage, emploi)", value: Pro }, { label: "Mission perso", value: Perso }] }
+              - { name: location, label: "Lieu ou entreprise" }
+              - { name: period, label: Période, hint: "Ex. : 03/02 – 28/02/2025" }
+              - { name: duration, label: Durée }
+              - { name: year, label: Année }
+              - { name: tags, label: "Mots-clés", widget: list, field: { name: tag, label: "Mot-clé" } }
+              - { name: skills, label: "Compétences mobilisées", widget: list, field: { name: skill, label: Compétence } }
+              - name: details
+                label: Détails de la fiche
+                widget: object
+                fields:
+                  - { name: post, label: Poste }
+                  - { name: mission, label: Mission }
+                  - { name: means, label: Moyens }
+                  - { name: constraints, label: Contraintes }
+                  - { name: steps, label: Étapes, label_singular: étape, widget: list, fields: [{ name: caption, label: Étape }] }
+                  - { name: highlights, label: Faits marquants, widget: text }
+                  - { name: skills, label: "Ce que j'ai appris", widget: text }
+                  - { name: liked, label: "Ce que j'ai aimé", widget: text }
+
+  - name: competences
+    label: Compétences
+    files:
+      - name: skills
+        label: Compétences et langues
+        file: data/skills.json
+        fields:
+          - name: technical
+            label: Compétences
+            label_singular: compétence
+            widget: list
+            summary: "{{fields.name}} ({{fields.level}})"
+            fields:
+              - { name: name, label: Nom }
+              - { name: level, label: Niveau, hint: "Ex. : Pratiqué en stage, Pratiqué en études" }
+              - { name: category, label: Rubrique, widget: select, options: [{ label: "CAO et conception", value: cao }, { label: Fabrication, value: fabrication }, { label: "Mécanique et électricité", value: mecanique-electricite }, { label: "Langues et savoir-être", value: langues-savoir-etre }] }
+              - { name: missions, label: "Missions liées", widget: relation, collection: missions, file: missions, value_field: "missions.*.slug", display_fields: ["missions.*.title"], search_fields: ["missions.*.title"], multiple: true, required: false }
+              - { name: experiences, label: "Expériences liées", widget: relation, collection: parcours, file: parcours, value_field: "experiences.*.title", display_fields: ["experiences.*.title"], search_fields: ["experiences.*.title"], multiple: true, required: false }
+          - name: languages
+            label: Langues
+            label_singular: langue
+            widget: list
+            summary: "{{fields.name}} : {{fields.level}}"
+            fields:
+              - { name: name, label: Langue }
+              - { name: level, label: Niveau, hint: "Natif, A1, A2, B1, B2, C1 ou C2" }
+
+  - name: parcours
+    label: Parcours
+    files:
+      - name: parcours
+        label: Formation et expériences
+        file: data/parcours.json
+        fields:
+          - name: education
+            label: Formation
+            label_singular: diplôme
+            widget: list
+            summary: "{{fields.year}} · {{fields.title}}"
+            fields:
+              - { name: year, label: Année }
+              - { name: title, label: Diplôme }
+              - { name: specialty, label: Spécialité }
+              - { name: location, label: Établissement }
+          - name: experiences
+            label: Expériences
+            label_singular: expérience
+            widget: list
+            summary: "{{fields.year}} · {{fields.title}}"
+            fields:
+              - { name: year, label: Année }
+              - { name: duration, label: Durée }
+              - { name: title, label: Poste }
+              - { name: company, label: "Entreprise et ville" }
+              - { name: description, label: Description, widget: text, required: false }
+              - { name: isAutomotive, label: "Expérience en mécanique", widget: boolean, default: false }
+              - { name: skills, label: Compétences, widget: list, field: { name: skill, label: Compétence }, required: false }
