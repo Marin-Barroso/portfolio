@@ -4,9 +4,6 @@ import { notFound } from "next/navigation";
 import { Card, PageShell } from "@/components/ui";
 import { content } from "@/data/content";
 
-// Position sur l'échelle européenne (CECRL), le natif tout en haut
-const LANGUAGE_LEVEL: Record<string, number> = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6, Natif: 7 };
-
 export function generateStaticParams() {
   return content.skillCategories.map((c) => ({ slug: c.slug }));
 }
@@ -30,15 +27,9 @@ export default async function CompetencePage({ params }: { params: Promise<{ slu
           <Card className="mb-10">
             <ul className="grid gap-4">
               {content.skills.languages.map((l) => (
-                <li key={l.name} className="grid grid-cols-[100px_1fr_60px] items-center gap-4">
+                <li key={l.name} className="flex items-baseline justify-between gap-4 border-b border-white/10 pb-3 last:border-0 last:pb-0">
                   <span className="font-semibold">{l.name}</span>
-                  <span className="h-2 overflow-hidden rounded-full bg-white/15" aria-hidden="true">
-                    <span
-                      className="block h-full rounded-full bg-gradient-to-r from-violet to-teal"
-                      style={{ width: `${((LANGUAGE_LEVEL[l.level] ?? 0) / 7) * 100}%` }}
-                    />
-                  </span>
-                  <span className="text-right font-mono text-label">{l.level}</span>
+                  <span className="font-mono text-label">{l.level}</span>
                 </li>
               ))}
             </ul>

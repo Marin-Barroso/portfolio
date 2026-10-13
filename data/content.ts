@@ -285,9 +285,8 @@ export const content = {
     intro: "En 3e année de Bachelor, la formation se poursuit en contrat de professionnalisation. Je cherche une entreprise pour l'année 2026-2027.",
     details: [
       { label: "Contrat", value: "Contrat de professionnalisation (Bachelor 3e année)" },
-      { label: "Domaines visés", value: "Préparation automobile pour la course, mécanique automobile, atelier" },
       { label: "Formation", value: "Bachelor Sciences et Ingénierie, Arts et Métiers Bordeaux-Talence" },
-      { label: "Mobilité", value: "Villenave d'Ornon, permis B et AM, véhiculé" }
+      { label: "Mobilité", value: "Bordeaux" }
     ]
   },
 

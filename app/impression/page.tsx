@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 const SITE_URL = "https://marien20.github.io/portfolio/";
-const LANGUAGE_LEVEL: Record<string, number> = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6, Natif: 7 };
 
 const { hero, contact, about, skills, timeline, missions, competenceTable, skillCategories, alternance, formation } = content;
 const MISSION_START = 5;
@@ -118,12 +117,9 @@ export default function PrintPortfolio() {
             <p className="h3">Langues</p>
             <ul className="list">
               {skills.languages.map((l) => (
-                <li key={l.name} style={{ display: "grid", gridTemplateColumns: "22mm 1fr 12mm", gap: "3mm", alignItems: "center" }}>
+                <li key={l.name} style={{ display: "flex", justifyContent: "space-between" }}>
                   <b>{l.name}</b>
-                  <span className="bar">
-                    <i style={{ width: `${((LANGUAGE_LEVEL[l.level] ?? 0) / 7) * 100}%` }} />
-                  </span>
-                  <span className="muted">{l.level}</span>
+                  <span>{l.level}</span>
                 </li>
               ))}
             </ul>
@@ -366,7 +362,7 @@ export default function PrintPortfolio() {
             </dd>
             <dt>Site</dt>
             <dd>
-              <a href={SITE_URL}>{SITE_URL}</a> (plaquette complète de la formation dans l&apos;onglet « Plaquette de formation »)
+              <a href={SITE_URL}>{SITE_URL}</a>
             </dd>
           </dl>
         </div>
