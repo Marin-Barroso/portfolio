@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -29,6 +29,21 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Corrige les fautes des textes saisis dans /admin et enregistre la correction dans le dépôt
+      # (un push fait avec GITHUB_TOKEN ne relance pas ce workflow)
+      - name: Correct spelling
+        run: node scripts/spellcheck.mjs
+
+      - name: Save spelling fixes
+        run: |
+          if ! git diff --quiet -- data; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data
+            git commit -m "Corrige automatiquement l'orthographe des textes"
+            git push
+          fi
 
       # Régénère le PDF à partir des données (modifiées éventuellement depuis /admin)
       - name: Generate PDF
