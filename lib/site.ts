@@ -7,6 +7,9 @@ export const PDF_URL = `${BASE_PATH}/portfolio-marin-barroso.pdf`;
 export const PDF_NAME = "Portfolio-Marin-Barroso.pdf";
 export const PLAQUETTE_URL = `${BASE_PATH}/plaquette-bachelor-mecanique-production.pdf`;
 
+// Les projets sans contenu restent hors ligne tant qu'ils ne sont pas remplis
+export const PROJECTS = content.projects.filter((p) => p.items.length > 0);
+
 export type NavItem = { label: string; href: string };
 export type NavSection = { label: string; href: string; items?: NavItem[] };
 
@@ -36,8 +39,8 @@ export const NAV: NavSection[] = [
   },
   {
     label: "Projets perso",
-    href: `/projets/${content.projects[0].slug}/`,
-    items: content.projects.map((p) => ({ label: p.title, href: `/projets/${p.slug}/` }))
+    href: `/projets/${PROJECTS[0].slug}/`,
+    items: PROJECTS.map((p) => ({ label: p.title, href: `/projets/${p.slug}/` }))
   },
   { label: "Plaquette de formation", href: "/plaquette-formation/" },
   {

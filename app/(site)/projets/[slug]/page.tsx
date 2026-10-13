@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card, PageShell, Tags, Todo } from "@/components/ui";
-import { content } from "@/data/content";
+import { PROJECTS } from "@/lib/site";
 
 export function generateStaticParams() {
-  return content.projects.map((p) => ({ slug: p.slug }));
+  return PROJECTS.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  return { title: content.projects.find((p) => p.slug === slug)?.title };
+  return { title: PROJECTS.find((p) => p.slug === slug)?.title };
 }
 
 export default async function ProjetPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = content.projects.find((p) => p.slug === slug);
+  const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) notFound();
 
   return (
