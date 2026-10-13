@@ -357,7 +357,7 @@ export const content = {
   links: [
     { label: "Email", value: "marin.barroso@ensam.eu", href: "mailto:marin.barroso@ensam.eu" },
     { label: "Téléphone", value: "07 67 46 70 70", href: "tel:+33767467070" },
-    { label: "GitHub", value: "marien20", href: "https://github.com/marien20" }
+    { label: "GitHub", value: "Marin-Barroso", href: "https://github.com/Marin-Barroso" }
   ],
 
   // Synthèse du syllabus du Bachelor de Technologie (Arts et Métiers)

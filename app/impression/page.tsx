@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const SITE_URL = "https://marien20.github.io/portfolio/";
+const SITE_URL = "https://marin-barroso.github.io/portfolio/";
 
 const { hero, contact, about, skills, timeline, missions, competenceTable, skillCategories, alternance, formation } = content;
 const MISSION_START = 5;
@@ -33,7 +33,7 @@ function Page({ n, section, large, children }: { n: number; section: string; lar
       </header>
       {children}
       <footer className="page-foot">
-        <a href={SITE_URL}>marien20.github.io/portfolio</a>
+        <a href={SITE_URL}>marin-barroso.github.io/portfolio</a>
         <span>
           {n} / {TOTAL}
         </span>
@@ -87,7 +87,7 @@ export default function PrintPortfolio() {
           </p>
           <p>
             <span>Site</span>
-            <a href={SITE_URL}>marien20.github.io/portfolio</a>
+            <a href={SITE_URL}>marin-barroso.github.io/portfolio</a>
           </p>
         </div>
       </section>
