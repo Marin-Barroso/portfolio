@@ -151,6 +151,51 @@
         "skills": "Restauration électrique d'un cyclomoteur, réparation de faisceaux électriques.",
         "liked": "Découvrir le monde de l'électricité dans la mécanique."
       }
+    },
+    {
+      "slug": "preparation-jeep-trackhawk-supercharged",
+      "title": "Gestion d'un Pôle",
+      "type": "Pro",
+      "location": "Speed Motors-Mérignac-33700",
+      "period": "13/04 au 25/07/2026",
+      "duration": "10 semaines",
+      "year": "2026",
+      "tags": [
+        "Gestion de planning",
+        "Mécanique",
+        "Gestion des délais"
+      ],
+      "skills": [
+        "Gestion des délais",
+        "Mécanique",
+        "Professionnalisme"
+      ],
+      "details": {
+        "post": "Assistant Responsable Pôle Mécanique",
+        "mission": "Gérer les chantiers du Pôle Mécanique",
+        "means": "Garage de préparation professionnel",
+        "constraints": "Gestion des délais et imprévus.",
+        "steps": [
+          {
+            "caption": "Enregistrer le chantier dans le planning"
+          },
+          {
+            "caption": "Agencer les chantiers afin d'optimiser le temps journalier et quotidien"
+          },
+          {
+            "caption": "Supervision des chantiers et participation"
+          },
+          {
+            "caption": "Ré-utilisation du chantier à des fin marketing"
+          },
+          {
+            "caption": "Rendu du projet au clients"
+          }
+        ],
+        "highlights": "La chose qui m'a le plus marqué est comment gérer les clients et un planning. En effet, je pensais qu'accueillir un clients, discuter et vendre son service ou produit n'étais pas si compliqué. La gestion d'un planning demande une certaine expérience afin de pouvoir estimer de manière juste le temps passé sur un chantier. J'ai été en charge d'une petite équipe à la fin du stage, et faire du management est aussi compliqué que ce que je pensais.",
+        "skills": "Comment estimer correctement le temps de réalisation d'un projet client. J'ai aussi appris beaucoup de chose relative a la gestion de l'humain tant vis à vis des clients que de l'équipe qui était à ma charge a la fin de mon stage.",
+        "liked": "J'ai particulièrement apprécier la confiance et la reconnaissance dont a fait preuve mon supérieur. Ainsi que me laisser de plus en plus de l'autonomie jusqu'à me donner la responsabilité d'une équipe."
+      }
     }
   ]
 }
