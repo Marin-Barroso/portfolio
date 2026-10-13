@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Card, KeyValues, PageShell } from "@/components/ui";
+import { Card, KeyValues, PageShell, PlaquetteButton } from "@/components/ui";
 import { content } from "@/data/content";
 
 export const metadata: Metadata = { title: "Alternance 2026-2027" };
@@ -23,6 +23,7 @@ export default function AlternancePage() {
           Voir mon CV
         </Link>
       </div>
+      <PlaquetteButton />
     </PageShell>
   );
 }

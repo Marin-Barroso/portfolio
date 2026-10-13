@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Card, PageShell } from "@/components/ui";
+import { Card, PageShell, PlaquetteButton } from "@/components/ui";
 import { content } from "@/data/content";
 
 export const metadata: Metadata = { title: "Formation" };
@@ -40,6 +40,7 @@ export default function FormationPage() {
           <p className="mt-2 text-fg">Contrat de professionnalisation pour une immersion en entreprise et une montée en compétences.</p>
         </Card>
       </div>
+      <PlaquetteButton />
     </PageShell>
   );
 }

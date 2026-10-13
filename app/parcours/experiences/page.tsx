@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Card, PageShell, Tags } from "@/components/ui";
+import { Card, PageShell, Tags, PlaquetteButton } from "@/components/ui";
 import { content } from "@/data/content";
 
 export const metadata: Metadata = { title: "Stages et expériences" };
@@ -27,6 +27,7 @@ export default function ExperiencesPage() {
           </li>
         ))}
       </ol>
+      <PlaquetteButton />
     </PageShell>
   );
 }

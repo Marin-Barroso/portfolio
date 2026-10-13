@@ -77,3 +77,13 @@ export function Todo({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
+export function PlaquetteButton() {
+  return (
+    <div className="mt-12 flex justify-center">
+      <Link href="/plaquette-formation/" className="btn-neon">
+        Plus d&apos;information sur la formation →
+      </Link>
+    </div>
+  );
+}

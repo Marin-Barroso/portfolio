@@ -53,11 +53,11 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/15 bg-ink/80 backdrop-blur-md">
       <nav ref={navRef} aria-label="Navigation principale" className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="mr-auto text-lg font-extrabold tracking-tight">
+        <Link href="/" className="mr-auto whitespace-nowrap text-lg font-extrabold tracking-tight">
           Marin <span className="text-gradient">Barroso</span>
         </Link>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-0.5 xl:flex">
           {NAV.map((s, i) =>
             s.items ? (
               <li key={s.label} className="relative">
@@ -66,7 +66,7 @@ export default function Header() {
                   aria-expanded={open === i}
                   aria-haspopup="true"
                   onClick={() => setOpen(open === i ? null : i)}
-                  className={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/10 ${
+                  className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold transition-colors hover:bg-white/10 ${
                     inSection(i) ? "text-white underline decoration-aqua decoration-2 underline-offset-8" : "text-soft"
                   }`}
                 >
@@ -95,7 +95,7 @@ export default function Header() {
                 <Link
                   href={s.href}
                   aria-current={inSection(i) ? "page" : undefined}
-                  className="rounded-full px-3 py-2 text-sm font-semibold text-soft hover:bg-white/10 aria-[current=page]:text-white aria-[current=page]:underline aria-[current=page]:decoration-aqua aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8"
+                  className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-soft hover:bg-white/10 aria-[current=page]:text-white aria-[current=page]:underline aria-[current=page]:decoration-aqua aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8"
                 >
                   {s.label}
                 </Link>
@@ -104,13 +104,13 @@ export default function Header() {
           )}
         </ul>
 
-        <a href={PDF_URL} download={PDF_NAME} className="btn-neon !px-4 !py-2 text-sm">
+        <a href={PDF_URL} download={PDF_NAME} className="btn-neon whitespace-nowrap !px-4 !py-2 text-sm">
           <span aria-hidden="true">⬇</span> PDF
         </a>
 
         <button
           type="button"
-          className="rounded-full border border-white/25 p-2 lg:hidden"
+          className="rounded-full border border-white/25 p-2 xl:hidden"
           aria-expanded={drawer}
           aria-controls="menu-mobile"
           aria-label={drawer ? "Fermer le menu" : "Ouvrir le menu"}
@@ -127,7 +127,7 @@ export default function Header() {
       </nav>
 
       {drawer && (
-        <div id="menu-mobile" className="max-h-[calc(100vh-64px)] overflow-y-auto border-t border-white/15 bg-panel px-4 pb-6 pt-2 lg:hidden">
+        <div id="menu-mobile" className="max-h-[calc(100vh-64px)] overflow-y-auto border-t border-white/15 bg-panel px-4 pb-6 pt-2 xl:hidden">
           {NAV.map((s) => (
             <div key={s.label} className="border-b border-white/10 py-3">
               {s.items ? (
