@@ -54,7 +54,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-white/15 bg-ink/80 backdrop-blur-md">
       <nav ref={navRef} aria-label="Navigation principale" className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="mr-auto whitespace-nowrap text-lg font-extrabold tracking-tight">
-          Marin <span className="text-gradient">Barroso</span>
+          Marin Barroso
         </Link>
 
         <ul className="hidden items-center gap-0.5 xl:flex">

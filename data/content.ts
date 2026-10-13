@@ -10,7 +10,7 @@ export const content = {
     },
     quickStats: [
       { label: "Missions détaillées", value: "4" },
-      { label: "Stages en garage et atelier", value: "3" },
+      { label: "Stages en garage et job saisonnier en atelier", value: "2 + 1" },
       { label: "Jiu-Jitsu brésilien", value: "2 ans" },
       { label: "Accordéon", value: "15 ans" }
     ]

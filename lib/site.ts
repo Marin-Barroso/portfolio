@@ -11,7 +11,8 @@ export const PLAQUETTE_URL = `${BASE_PATH}/plaquette-bachelor-mecanique-producti
 export const PROJECTS = content.projects.filter((p) => p.items.length > 0);
 
 export type NavItem = { label: string; href: string };
-export type NavSection = { label: string; href: string; items?: NavItem[] };
+// footer remplace items dans le plan du site quand la liste complète serait trop longue
+export type NavSection = { label: string; href: string; items?: NavItem[]; footer?: NavItem[] };
 
 export const NAV: NavSection[] = [
   { label: "Accueil", href: "/" },
@@ -27,6 +28,11 @@ export const NAV: NavSection[] = [
   {
     label: "Missions",
     href: "/missions/",
+    footer: [
+      { label: "Toutes les missions", href: "/missions/" },
+      { label: "Missions perso", href: "/missions/#perso" },
+      { label: "Missions pro", href: "/missions/#pro" }
+    ],
     items: [
       { label: "Toutes les missions", href: "/missions/" },
       ...content.missions.map((m) => ({ label: m.title, href: `/missions/${m.slug}/` }))

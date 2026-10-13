@@ -16,7 +16,7 @@ export default function Footer() {
           <div key={s.label}>
             <p className="mb-2 font-extrabold">{s.label}</p>
             <ul className="grid gap-1 text-sm">
-              {(s.items ?? [{ label: s.label, href: s.href }]).map((it) => (
+              {(s.footer ?? s.items ?? [{ label: s.label, href: s.href }]).map((it) => (
                 <li key={it.href}>
                   <Link href={it.href} className="text-soft hover:text-white">
                     {it.label}
