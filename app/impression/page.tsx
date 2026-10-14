@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { content } from "@/data/content";
+import { SITE_URL } from "@/lib/site";
 import "./print.css";
 
 // Source du PDF téléchargeable : une page HTML par page A4, imprimée par scripts/generate-pdf.mjs
@@ -8,7 +9,6 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const SITE_URL = "https://marin-barroso.github.io/portfolio/";
 
 const { hero, contact, about, skills, timeline, missions, competenceTable, skillCategories, alternance, formation } = content;
 // Une fiche mission peut tenir sur plusieurs pages : la numérotation est faite par Chrome
@@ -33,6 +33,24 @@ function Page({ id, section, large, children }: { id: string; section: string; l
       {children}
     </section>
   );
+}
+
+// Au-delà de cette longueur cumulée, les trois encadrés d'une fiche passent en pleine largeur
+const LONG_TEXT = 450;
+function longTexts(m: (typeof missions)[number]) {
+  const { highlights, skills: learned, liked } = m.details;
+  return highlights.length + learned.length + liked.length > LONG_TEXT;
+}
+
+// Compétences et mots-clés sans doublon (même mot avec une autre casse compris)
+function uniqueTags(list: string[]) {
+  const seen = new Set<string>();
+  return list.filter((t) => {
+    const key = t.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 // Numéros (1, 2…) des missions où une compétence a été pratiquée
@@ -266,6 +284,14 @@ export default function PrintPortfolio() {
               <dd>{m.details.means}</dd>
               <dt>Contraintes</dt>
               <dd>{m.details.constraints}</dd>
+              {m.result && (
+                <>
+                  <dt>Résultat</dt>
+                  <dd>
+                    <b>{m.result}</b>
+                  </dd>
+                </>
+              )}
             </dl>
           </div>
           <div>
@@ -279,7 +305,8 @@ export default function PrintPortfolio() {
               ))}
             </ol>
           </div>
-          <div className="grid3">
+          {/* Textes longs : une case par ligne en pleine largeur plutôt que trois colonnes étroites */}
+          <div className={longTexts(m) ? "list" : "grid3"}>
             <div className="box">
               <p className="kicker" style={{ marginBottom: "2mm" }}>
                 Faits marquants
@@ -317,7 +344,7 @@ export default function PrintPortfolio() {
           <div>
             <p className="h3">Compétences mobilisées</p>
             <div className="tags">
-              {[...m.skills, ...m.tags].map((t) => (
+              {uniqueTags([...m.skills, ...m.tags]).map((t) => (
                 <span key={t}>{t}</span>
               ))}
             </div>
@@ -360,7 +387,7 @@ export default function PrintPortfolio() {
             </div>
           ))}
         </div>
-        <div className="box tint" style={{ marginTop: "auto", marginBottom: "6mm" }}>
+        <div className="box tint" style={{ marginTop: "auto" }}>
           <p className="h3">Me contacter</p>
           <dl className="kv">
             <dt>Téléphone</dt>
@@ -374,6 +401,10 @@ export default function PrintPortfolio() {
             <dt>Site</dt>
             <dd>
               <a href={SITE_URL}>{SITE_URL}</a>
+            </dd>
+            <dt>LinkedIn</dt>
+            <dd>
+              <a href={contact.linkedin}>linkedin.com/in/marin-barroso-35ab832a5</a>
             </dd>
           </dl>
         </div>

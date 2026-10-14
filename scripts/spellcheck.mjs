@@ -2,13 +2,13 @@
 // avec l'API publique de LanguageTool. Seules les corrections sûres sont appliquées :
 // accents oubliés et accords avec une seule proposition. Les noms propres, sigles et mots
 // techniques ne sont jamais modifiés. En cas d'erreur réseau, rien n'est changé.
-import { readFile, writeFile } from "node:fs/promises";
+import { appendFile, readFile, writeFile } from "node:fs/promises";
 
 const FILES = ["data/missions.json", "data/skills.json", "data/parcours.json"];
 // Clés techniques (identifiants, liens, dates) à ne jamais corriger
-const SKIP_KEYS = new Set(["slug", "type", "category", "missions", "experiences", "year", "period", "duration", "isAutomotive", "image"]);
+const SKIP_KEYS = new Set(["slug", "type", "category", "missions", "experiences", "year", "period", "duration", "isAutomotive", "image", "thumbnail", "start"]);
 // Mots inconnus du dictionnaire mais corrects
-const IGNORE = new Set(["cyclo", "cyclomoteur", "cyclomoteurs", "micro-pieux", "vidange", "faisceaux", "itec"]);
+const IGNORE = new Set(["cyclo", "cyclomoteur", "cyclomoteurs", "micro-pieux", "vidange", "faisceaux", "itec", "redessin"]);
 // Catégories de fautes à corriger ; la typographie et le style sont laissés tels quels
 const GRAMMAR = /GRAMM|ACCORD|AGREEMENT|CONJUG|HOMONYM/i;
 
@@ -57,6 +57,9 @@ function collect(node, out, key = "") {
 }
 
 let total = 0;
+// Pour le rapport : corrections appliquées et fautes possibles laissées à vérifier
+const applied = [];
+const remaining = [];
 for (const file of FILES) {
   const data = JSON.parse(await readFile(file, "utf8"));
   const fields = [];
@@ -86,7 +89,15 @@ for (const file of FILES) {
     if (!r) continue;
     const original = text.slice(m.offset, m.offset + m.length);
     const fix = pickFix(m, original);
-    if (!fix) continue;
+    if (!fix) {
+      // Les noms propres et sigles (majuscule, chiffre, @, &) ne sont pas signalés : ce sont presque toujours des faux positifs
+      const properNoun = /[A-Z0-9@&]/.test(original) || IGNORE.has(original.toLowerCase());
+      if (!properNoun && (m.rule.category.id === "TYPOS" || GRAMMAR.test(m.rule.category.id) || GRAMMAR.test(m.rule.id))) {
+        const context = text.slice(Math.max(r.start, m.offset - 30), Math.min(r.end, m.offset + m.length + 30));
+        remaining.push({ file, original, context, suggestions: m.replacements.slice(0, 3).map((x) => x.value) });
+      }
+      continue;
+    }
     if (!edits.has(r)) edits.set(r, []);
     edits.get(r).push({ from: m.offset - r.start, to: m.offset - r.start + m.length, fix, original });
   }
@@ -95,6 +106,7 @@ for (const file of FILES) {
     for (const e of list.sort((a, b) => b.from - a.from)) {
       s = s.slice(0, e.from) + e.fix + s.slice(e.to);
       console.log(`${file} : « ${e.original} » → « ${e.fix} »`);
+      applied.push({ file, ...e });
       total++;
     }
     r.f.set(s);
@@ -103,3 +115,24 @@ for (const file of FILES) {
   await new Promise((ok) => setTimeout(ok, 3500)); // limite de l'API gratuite
 }
 console.log(total ? `${total} correction(s) appliquée(s).` : "Aucune faute à corriger.");
+
+// Rapport lisible : résumé du job GitHub Actions et fichier repris dans l'issue « Fautes à vérifier »
+const lines = [];
+if (applied.length) {
+  lines.push("## Corrections appliquées automatiquement", "");
+  for (const a of applied) lines.push(`- \`${a.file}\` : « ${a.original} » → « ${a.fix} »`);
+  lines.push("");
+}
+if (remaining.length) {
+  lines.push("## Fautes possibles à vérifier dans l'admin", "");
+  lines.push("Le correcteur hésite sur ces passages : il ne les a pas modifiés.", "");
+  for (const r of remaining) {
+    const sugg = r.suggestions.length ? ` (suggestions : ${r.suggestions.join(", ")})` : "";
+    lines.push(`- « …${r.context.replace(/\s+/g, " ")}… » : **${r.original}**${sugg}`);
+  }
+  lines.push("");
+}
+const report = lines.join("\n");
+await writeFile("spellcheck-report.md", report);
+await writeFile("spellcheck-remaining.txt", String(remaining.length));
+if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, report || "Aucune faute détectée.\n");

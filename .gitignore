@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# rapport du correcteur (CI)
+spellcheck-report.md
+spellcheck-remaining.txt

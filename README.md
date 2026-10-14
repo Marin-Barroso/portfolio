@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio de Marin Barroso
 
-## Getting Started
+Site : https://marin-barroso.github.io/portfolio/ (Next.js, export statique sur GitHub Pages).
 
-First, run the development server:
+## Modifier le contenu
+
+- **Missions, compétences, langues et parcours** : depuis l'admin, https://marin-barroso.github.io/portfolio/admin/ (connexion avec un jeton GitHub). Les données sont dans `data/missions.json`, `data/skills.json` et `data/parcours.json`.
+- **Reste du site** (accueil, à propos, contact, formation) : `data/content.ts`.
+
+Chaque push sur `main` lance `.github/workflows/deploy.yml`, qui corrige l'orthographe des textes de l'admin (`scripts/spellcheck.mjs`), régénère le PDF (`npm run pdf`) puis publie le site.
+
+## En local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run pdf` : régénère `public/portfolio-marin-barroso.pdf` à partir de la page `/impression/` (Chrome ou Edge requis).
+- `node scripts/spellcheck.mjs` : corrige les fautes sûres dans `data/*.json`.

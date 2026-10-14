@@ -30,6 +30,11 @@ export default function ContactPage() {
               </a>
             </li>
             <li>
+              <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-aqua underline underline-offset-4">
+                LinkedIn
+              </a>
+            </li>
+            <li>
               <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="text-aqua underline underline-offset-4">
                 WhatsApp
               </a>

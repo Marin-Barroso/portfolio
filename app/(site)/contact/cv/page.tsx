@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Card, PageShell } from "@/components/ui";
 import { content } from "@/data/content";
-import { PDF_NAME, PDF_URL } from "@/lib/site";
+import { PDF_NAME, PDF_URL, asset } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Mon CV" };
 
@@ -13,9 +13,14 @@ export default function CvPage() {
       title="Mon CV"
       intro="L'essentiel en une page. Le portfolio complet (CV, compétences et fiches mission) est disponible en PDF."
     >
-      <a href={PDF_URL} download={PDF_NAME} className="btn-neon mb-8">
-        <span aria-hidden="true">⬇</span> Télécharger le portfolio en PDF
-      </a>
+      <div className="mb-8 flex flex-wrap gap-3">
+        <a href={asset(contact.cvFile)} download="CV-Marin-Barroso.pdf" className="btn-neon">
+          <span aria-hidden="true">⬇</span> {contact.cvButton}
+        </a>
+        <a href={PDF_URL} download={PDF_NAME} className="btn-ghost">
+          <span aria-hidden="true">⬇</span> Télécharger le portfolio en PDF
+        </a>
+      </div>
 
       <div className="grid gap-5 lg:grid-cols-[1fr_2fr]">
         <div className="grid h-fit gap-5">

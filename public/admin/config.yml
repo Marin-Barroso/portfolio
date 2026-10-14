@@ -36,35 +36,40 @@ collections:
             label: Missions
             label_singular: mission
             widget: list
-            summary: "{{fields.title}} ({{fields.type}}, {{fields.year}})"
+            summary: "{{fields.title}} ({{fields.type}}, {{fields.start}})"
             fields:
-              - { name: slug, label: "Identifiant dans l'adresse", hint: "Minuscules et tirets, sans accent (ex. : vidange-clio). Ne pas le changer ensuite.", pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Minuscules, chiffres et tirets uniquement"] }
-              - { name: title, label: Titre }
+              - { name: draft, label: "Brouillon", widget: boolean, default: false, hint: "Coché : la mission reste cachée sur le site et dans le PDF. Décoche-le pour la publier." }
+              - { name: slug, label: "Identifiant dans l'adresse", hint: "Minuscules et tirets, sans accent (ex. : vidange-clio). Ne pas le changer ensuite, sinon les liens vers la fiche cassent.", pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Minuscules, chiffres et tirets uniquement"] }
+              - { name: title, label: Titre, hint: "Court et concret, ex. : « Révision complète sur une Peugeot 106 » (60 caractères max conseillés)." }
               - { name: type, label: Type, widget: select, options: [{ label: "Mission pro (stage, emploi)", value: Pro }, { label: "Mission perso", value: Perso }] }
-              - { name: location, label: "Lieu ou entreprise" }
-              - { name: period, label: Période, hint: "Ex. : 03/02 – 28/02/2025" }
-              - { name: duration, label: Durée }
-              - { name: year, label: Année }
-              - { name: tags, label: "Mots-clés", widget: list, field: { name: tag, label: "Mot-clé" } }
-              - { name: skills, label: "Compétences mobilisées", widget: list, field: { name: skill, label: Compétence } }
+              - { name: start, label: "Date de début", hint: "Format AAAA-MM, ex. : 2026-04. Sert à trier les missions de la plus récente à la plus ancienne.", pattern: ["^[0-9]{4}-(0[1-9]|1[0-2])$", "Format AAAA-MM, ex. : 2026-04"] }
+              - { name: location, label: "Lieu ou entreprise", hint: "Ex. : Speed Motors, Mérignac" }
+              - { name: period, label: Période, hint: "Ex. : 13/04 – 25/07/2026" }
+              - { name: duration, label: Durée, hint: "Ex. : 10 semaines, 45 min, projet en cours" }
+              - { name: year, label: Année, hint: "Affichée sur les cartes, ex. : 2026" }
+              - { name: thumbnail, label: "Vignette", widget: image, required: false, hint: "Facultatif. Image affichée en haut de la carte de la mission (accueil et page Missions). Format paysage conseillé." }
+              - { name: tags, label: "Mots-clés", widget: list, field: { name: tag, label: "Mot-clé" }, hint: "3 ou 4 mots-clés courts, sans répéter les compétences ci-dessous." }
+              - { name: skills, label: "Compétences mobilisées", widget: list, field: { name: skill, label: Compétence }, hint: "Reprends si possible les noms de la rubrique Compétences." }
+              - { name: result, label: "Résultat chiffré", required: false, hint: "Facultatif, une phrase avec un chiffre. Ex. : « 12 chantiers planifiés par semaine », « 30 % de temps gagné sur la révision »." }
               - name: details
                 label: Détails de la fiche
                 widget: object
                 fields:
-                  - { name: post, label: Poste }
-                  - { name: mission, label: Mission }
-                  - { name: means, label: Moyens }
-                  - { name: constraints, label: Contraintes }
-                  - { name: steps, label: Étapes, label_singular: étape, widget: list, fields: [{ name: caption, label: Étape }] }
-                  - { name: highlights, label: Faits marquants, widget: text }
-                  - { name: skills, label: "Ce que j'ai appris", widget: text }
-                  - { name: liked, label: "Ce que j'ai aimé", widget: text }
+                  - { name: post, label: Poste, hint: "Ex. : Exécutant, Assistant responsable du pôle mécanique" }
+                  - { name: mission, label: Mission, hint: "Une phrase : ce qu'on t'a confié." }
+                  - { name: means, label: Moyens, hint: "Outils, atelier, encadrement…" }
+                  - { name: constraints, label: Contraintes, hint: "Délais, budget, débit, météo…" }
+                  - { name: steps, label: Étapes, label_singular: étape, widget: list, fields: [{ name: caption, label: Étape }], hint: "3 à 5 étapes, une phrase courte chacune." }
+                  - { name: highlights, label: Faits marquants, widget: text, hint: "2 à 3 phrases : ce qui t'a surpris ou marqué." }
+                  - { name: skills, label: "Ce que j'ai appris", widget: text, hint: "2 à 3 phrases : compétences et savoir-être acquis." }
+                  - { name: liked, label: "Ce que j'ai aimé", widget: text, hint: "1 à 2 phrases." }
               - name: photos
                 label: Photos
                 label_singular: photo
                 widget: list
                 required: false
                 summary: "{{fields.caption}}"
+                hint: "Les deux premières photos sont reprises dans le PDF."
                 fields:
                   - { name: image, label: Photo, widget: image }
                   - { name: caption, label: Légende, required: false }

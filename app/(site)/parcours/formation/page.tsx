@@ -25,21 +25,10 @@ export default function FormationPage() {
         ))}
       </ol>
 
-      <h2 className="mb-4 mt-12 text-xl font-extrabold">Le Bachelor en trois ans</h2>
-      <div className="grid gap-5 md:grid-cols-3">
-        <Card>
-          <p className="label-mono">1re année</p>
-          <p className="mt-2 text-fg">Enseignements scientifiques et technologiques, projets de la conception à la réalisation, stage exécutant de 4 semaines.</p>
-        </Card>
-        <Card>
-          <p className="label-mono">2e année</p>
-          <p className="mt-2 text-fg">Ingénierie des produits, des procédés et des énergies, stage technicien de 12 semaines.</p>
-        </Card>
-        <Card>
-          <p className="label-mono">3e année</p>
-          <p className="mt-2 text-fg">Contrat de professionnalisation pour une immersion en entreprise et une montée en compétences.</p>
-        </Card>
-      </div>
+      <p className="mx-auto mt-12 max-w-2xl text-center text-lg text-fg">
+        Un bac+3 des Arts et Métiers, accrédité par la CTI : trois ans de projets concrets, de la conception à l&apos;atelier, et une dernière
+        année en alternance pour apprendre sur le terrain.
+      </p>
       <PlaquetteButton />
     </PageShell>
   );

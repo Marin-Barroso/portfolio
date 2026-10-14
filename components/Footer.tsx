@@ -28,7 +28,10 @@ export default function Footer() {
         ))}
       </div>
       <p className="border-t border-white/10 px-4 py-4 text-center text-sm text-soft">
-        © {new Date().getFullYear()} Marin Barroso · {content.contact.email}
+        © {new Date().getFullYear()} Marin Barroso · {content.contact.email} ·{" "}
+        <a href={content.contact.linkedin} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white">
+          LinkedIn
+        </a>
       </p>
     </footer>
   );

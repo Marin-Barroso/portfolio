@@ -37,9 +37,11 @@ export default async function MissionPage({ params }: { params: Promise<{ slug: 
               { label: "Mission", value: m.details.mission },
               { label: "Moyens", value: m.details.means },
               { label: "Contraintes", value: m.details.constraints },
+              ...(m.result ? [{ label: "Résultat", value: m.result }] : []),
             ]}
           />
-          <Tags items={m.tags} />
+          {/* Les mots-clés déjà listés dans « Compétences mobilisées » ne sont pas répétés */}
+          <Tags items={m.tags.filter((t) => !m.skills.some((sk) => sk.toLowerCase() === t.toLowerCase()))} />
         </Card>
         <Card>
           <p className="label-mono mb-3">Compétences mobilisées</p>

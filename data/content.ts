@@ -2,13 +2,19 @@ import missionsData from "./missions.json";
 import parcoursData from "./parcours.json";
 import skillsData from "./skills.json";
 
-// Les photos sont facultatives : une mission sans photo n'a pas ce champ dans le JSON
+// Photos, vignette et résultat chiffré sont facultatifs : une mission sans eux n'a pas ces champs dans le JSON
 export type MissionPhoto = { image: string; caption?: string };
-export type Mission = (typeof missionsData.missions)[number] & { photos?: MissionPhoto[] };
+export type Mission = (typeof missionsData.missions)[number] & { photos?: MissionPhoto[]; thumbnail?: string; result?: string };
+
+// Missions publiées, de la plus récente à la plus ancienne (date de début AAAA-MM saisie dans l'admin).
+// Le tri est stable : à date égale, l'ordre de l'admin est conservé.
+const missions = (missionsData.missions as Mission[])
+  .filter((m) => !m.draft)
+  .sort((a, b) => b.start.localeCompare(a.start));
 
 // Missions, compétences et parcours sont dans des fichiers JSON modifiables depuis /admin
 export const content = {
-  missions: missionsData.missions as Mission[],
+  missions,
   skills: skillsData,
   timeline: parcoursData,
 
@@ -64,7 +70,7 @@ export const content = {
       "Accordéon (15 ans)",
       "Bénévolat (musicien dans un orchestre lors de représentations)"
     ],
-    image: "/images/marin.jpg"
+    image: "/images/marin.png"
   },
 
   contact: {
@@ -76,7 +82,7 @@ export const content = {
     cvButton: "Télécharger mon CV",
     contactButton: "M'écrire",
     cvFile: "/cv-marin-barroso.pdf",
-    logo: "/images/logo-arts-et-metiers.png",
+    linkedin: "https://www.linkedin.com/in/marin-barroso-35ab832a5/",
     availability: "Disponible pour une alternance",
     emailSubject: "Opportunité d'alternance – Portfolio de Marin Barroso",
     emailBody: "Bonjour Marin, j'ai découvert votre portfolio et souhaiterais échanger avec vous au sujet de…",
@@ -150,6 +156,7 @@ export const content = {
   links: [
     { label: "Email", value: "marin.barroso@ensam.eu", href: "mailto:marin.barroso@ensam.eu" },
     { label: "Téléphone", value: "07 67 46 70 70", href: "tel:+33767467070" },
+    { label: "LinkedIn", value: "Marin Barroso", href: "https://www.linkedin.com/in/marin-barroso-35ab832a5/" },
     { label: "GitHub", value: "Marin-Barroso", href: "https://github.com/Marin-Barroso" }
   ],
 

@@ -8,6 +8,7 @@
       "period": "03/02 – 28/02/2025",
       "duration": "45 min",
       "year": "2025",
+      "start": "2025-02",
       "tags": [
         "Révision",
         "Entretien",
@@ -36,7 +37,8 @@
         "highlights": "Le niveau de propreté des véhicules est souvent contraignant.",
         "skills": "Méthodologie de vérification d'un véhicule ; réparer et tester l'état du véhicule ; oser demander de l'aide.",
         "liked": "L'autonomie donnée à un simple stagiaire une fois qu'il a été formé, mais en gardant un certain accompagnement en cas de nécessité."
-      }
+      },
+      "draft": false
     },
     {
       "slug": "soudure-micro-pieux",
@@ -46,6 +48,7 @@
       "period": "27/06 – 30/07/2023",
       "duration": "8h à 16h",
       "year": "2023",
+      "start": "2023-06",
       "tags": [
         "Soudure MIG",
         "Production",
@@ -74,7 +77,8 @@
         "highlights": "Nécessité d'un haut débit de pièces et précision requise pour la mise en place.",
         "skills": "Soudure, vitesse de fabrication.",
         "liked": "La pédagogie avec laquelle on m'a appris à souder."
-      }
+      },
+      "draft": false
     },
     {
       "slug": "restauration-mecanique-moto-50",
@@ -84,13 +88,15 @@
       "period": "Depuis le 31/07/2024",
       "duration": "Projet en cours",
       "year": "2024",
+      "start": "2024-07",
       "tags": [
         "Restauration",
         "Mécanique moto",
         "Autonomie"
       ],
       "skills": [
-        "Mécanique moto/cyclomoteur"
+        "Mécanique moto/cyclomoteur",
+        "CATIA V5"
       ],
       "details": {
         "post": "Autodidacte",
@@ -109,9 +115,10 @@
           }
         ],
         "highlights": "État du parc cyclomoteur en France, il a fallu refaire la quasi-totalité de la moto.",
-        "skills": "Entretien d'un cyclomoteur, réparation de pièces, mécanique sur cyclo.",
+        "skills": "Entretien d'un cyclomoteur, réparation de pièces, mécanique sur cyclo ; redessin de pièces sous CATIA V5 pour les refaire à moindre coût.",
         "liked": "Apprendre et découvrir la mécanique cyclomoteur, ce qui a confirmé mon envie de travailler dans ce domaine."
-      }
+      },
+      "draft": false
     },
     {
       "slug": "restauration-electrique-moto-50",
@@ -121,6 +128,7 @@
       "period": "Depuis le 31/07/2024",
       "duration": "Projet en cours",
       "year": "2024",
+      "start": "2024-07",
       "tags": [
         "Électricité",
         "Diagnostic",
@@ -150,16 +158,18 @@
         "highlights": "Malgré l'âge du cyclo, l'état électrique était relativement bon.",
         "skills": "Restauration électrique d'un cyclomoteur, réparation de faisceaux électriques.",
         "liked": "Découvrir le monde de l'électricité dans la mécanique."
-      }
+      },
+      "draft": false
     },
     {
-      "slug": "preparation-jeep-trackhawk-supercharged",
-      "title": "Gestion d'un Pôle",
+      "slug": "gestion-pole-mecanique-speed-motors",
+      "title": "Gestion du pôle mécanique chez Speed Motors",
       "type": "Pro",
-      "location": "Speed Motors-Mérignac-33700",
-      "period": "13/04 au 25/07/2026",
+      "location": "Speed Motors, Mérignac",
+      "period": "13/04 – 25/07/2026",
       "duration": "10 semaines",
       "year": "2026",
+      "start": "2026-04",
       "tags": [
         "Gestion de planning",
         "Mécanique",
@@ -186,16 +196,17 @@
             "caption": "Supervision des chantiers et participation"
           },
           {
-            "caption": "Ré-utilisation du chantier à des fins marketing"
+            "caption": "Réutilisation du chantier à des fins marketing"
           },
           {
             "caption": "Rendu du projet au client"
           }
         ],
-        "highlights": "La chose qui m'a le plus marqué est comment gérer les clients et un planning. En effet, je pensais qu'accueillir un client, discuter et vendre son service ou produit n'étais pas si compliqué. La gestion d'un planning demande une certaine expérience afin de pouvoir estimer de manière juste le temps passé sur un chantier. J'ai été en charge d'une petite équipe à la fin du stage, et faire du management est aussi compliqué que ce que je pensais.",
-        "skills": "Comment estimer correctement le temps de réalisation d'un projet client. J'ai aussi appris beaucoup de chose relative à la gestion de l'humain tant vis à vis des clients que de l'équipe qui était à ma charge à la fin de mon stage.",
-        "liked": "J'ai particulièrement apprécié la confiance et la reconnaissance dont a fait preuve mon supérieur. Ainsi que me laisser de plus en plus de l'autonomie jusqu'à me donner la responsabilité d'une équipe."
-      }
+        "highlights": "La chose qui m'a le plus marqué est comment gérer les clients et un planning. En effet, je pensais qu'accueillir un client, discuter et vendre son service ou produit n'était pas si compliqué. La gestion d'un planning demande une certaine expérience afin de pouvoir estimer de manière juste le temps passé sur un chantier. J'ai été en charge d'une petite équipe à la fin du stage, et faire du management est aussi compliqué que ce que je pensais.",
+        "skills": "Comment estimer correctement le temps de réalisation d'un projet client. J'ai aussi appris beaucoup de choses relatives à la gestion de l'humain tant vis-à-vis des clients que de l'équipe qui était à ma charge à la fin de mon stage.",
+        "liked": "J'ai particulièrement apprécié la confiance et la reconnaissance dont a fait preuve mon supérieur. Ainsi que de m'avoir laissé de plus en plus d'autonomie jusqu'à me donner la responsabilité d'une équipe."
+      },
+      "draft": false
     }
   ]
 }

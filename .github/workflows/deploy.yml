@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
   pages: write
   id-token: write
 
@@ -44,6 +45,21 @@ jobs:
             git commit -m "Corrige automatiquement l'orthographe des textes"
             git push
           fi
+
+      # Tient à jour une issue « Fautes à vérifier » avec les passages que le correcteur n'a pas osé modifier
+      - name: Report spelling
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Fautes à vérifier"
+          NUM=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number')
+          if [ "$(cat spellcheck-remaining.txt)" != "0" ]; then
+            if [ -n "$NUM" ]; then gh issue edit "$NUM" --body-file spellcheck-report.md
+            else gh issue create --title "$TITLE" --body-file spellcheck-report.md; fi
+          elif [ -n "$NUM" ]; then
+            gh issue close "$NUM" --comment "Plus aucune faute détectée."
+          fi
+          rm -f spellcheck-report.md spellcheck-remaining.txt
 
       # Régénère le PDF à partir des données (modifiées éventuellement depuis /admin)
       - name: Generate PDF

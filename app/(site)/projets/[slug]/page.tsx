@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card, PageShell, Tags, Todo } from "@/components/ui";
+import { content } from "@/data/content";
 import { PROJECTS } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -26,7 +27,10 @@ export default async function ProjetPage({ params }: { params: Promise<{ slug: s
         <div className="grid gap-5 md:grid-cols-2">
           {project.items.map((it) => (
             <Card key={it.title} hover>
-              <p className="label-mono">{it.kind}</p>
+              <p className="label-mono">
+                {/* Le numéro suit le tri des missions, il est donc recalculé ici */}
+                {it.mission ? `Mission ${content.missions.findIndex((m) => m.slug === it.mission) + 1}` : it.kind}
+              </p>
               <h2 className="mt-2 text-lg font-semibold">{it.title}</h2>
               <p className="mt-2 text-fg">{it.text}</p>
               <Tags items={it.tags} />
