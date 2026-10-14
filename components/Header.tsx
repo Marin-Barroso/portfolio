@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { NAV, PDF_NAME, PDF_URL, sameRoute } from "@/lib/site";
+import { NAV as ALL_NAV, PDF_NAME, PDF_URL, sameRoute } from "@/lib/site";
+
+const NAV = ALL_NAV.filter((s) => s.inHeader !== false);
 
 function Chevron() {
   return (

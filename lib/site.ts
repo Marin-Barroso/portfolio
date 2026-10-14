@@ -18,7 +18,7 @@ export const PROJECTS = content.projects.filter((p) => p.items.length > 0);
 
 export type NavItem = { label: string; href: string };
 // footer remplace items dans le plan du site quand la liste complète serait trop longue
-export type NavSection = { label: string; href: string; items?: NavItem[]; footer?: NavItem[] };
+export type NavSection = { label: string; href: string; items?: NavItem[]; footer?: NavItem[]; inHeader?: false };
 
 export const NAV: NavSection[] = [
   { label: "Accueil", href: "/" },
@@ -51,6 +51,8 @@ export const NAV: NavSection[] = [
   },
   {
     label: "Projets perso",
+    // Retiré du menu du haut à la demande de Marin, reste dans le plan du site en pied de page
+    inHeader: false,
     href: `/projets/${PROJECTS[0].slug}/`,
     items: PROJECTS.map((p) => ({ label: p.title, href: `/projets/${p.slug}/` }))
   },
