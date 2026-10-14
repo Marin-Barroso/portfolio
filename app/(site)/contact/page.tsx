@@ -12,7 +12,7 @@ export default function ContactPage() {
     <PageShell
       crumbs={[{ label: "Contact" }, { label: "Me contacter" }]}
       title="Me contacter"
-      intro="Une alternance, un stage ou une question sur un projet : écris-moi."
+      intro="Une alternance, un stage ou une question sur un projet : écrivez-moi."
     >
       <div className="grid gap-8 lg:grid-cols-[3fr_2fr]">
         <ContactForm />

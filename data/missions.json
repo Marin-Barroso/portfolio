@@ -46,7 +46,7 @@
       "type": "Pro",
       "location": "Aguila Mécanique, Martillac",
       "period": "27/06 – 30/07/2023",
-      "duration": "8h à 16h",
+      "duration": "8 h à 16 h",
       "year": "2023",
       "start": "2023-06",
       "tags": [
@@ -65,7 +65,7 @@
         "constraints": "Le débit de pièces",
         "steps": [
           {
-            "caption": "Mise en place des 2 pièces"
+            "caption": "Mise en place des deux pièces"
           },
           {
             "caption": "Soudure"
@@ -95,7 +95,7 @@
         "Autonomie"
       ],
       "skills": [
-        "Mécanique moto/cyclomoteur",
+        "Mécanique moto et cyclomoteur",
         "CATIA V5"
       ],
       "details": {
@@ -114,9 +114,9 @@
             "caption": "Vérification, fiabilisation et test"
           }
         ],
-        "highlights": "État du parc cyclomoteur en France, il a fallu refaire la quasi-totalité de la moto.",
-        "skills": "Entretien d'un cyclomoteur, réparation de pièces, mécanique sur cyclo ; redessin de pièces sous CATIA V5 pour les refaire à moindre coût.",
-        "liked": "Apprendre et découvrir la mécanique cyclomoteur, ce qui a confirmé mon envie de travailler dans ce domaine."
+        "highlights": "Vu l'état du parc de cyclomoteurs en France, il a fallu refaire la quasi-totalité de la moto.",
+        "skills": "Entretien d'un cyclomoteur, réparation de pièces, mécanique sur cyclomoteur ; pièces redessinées sous CATIA V5 pour les refaire à moindre coût.",
+        "liked": "Apprendre et découvrir la mécanique des cyclomoteurs, ce qui a confirmé mon envie de travailler dans ce domaine."
       },
       "draft": false
     },
@@ -135,7 +135,7 @@
         "Faisceaux"
       ],
       "skills": [
-        "Mécanique moto/cyclomoteur",
+        "Mécanique moto et cyclomoteur",
         "Recherche de panne",
         "Électricité véhicule (faisceaux)"
       ],
@@ -167,7 +167,7 @@
       "type": "Pro",
       "location": "Speed Motors, Mérignac",
       "period": "13/04 – 25/07/2026",
-      "duration": "10 semaines",
+      "duration": "11 semaines",
       "year": "2026",
       "start": "2026-04",
       "tags": [
@@ -181,30 +181,30 @@
         "Professionnalisme"
       ],
       "details": {
-        "post": "Assistant Responsable Pôle Mécanique",
-        "mission": "Gérer les chantiers du Pôle Mécanique",
+        "post": "Assistant responsable du pôle mécanique",
+        "mission": "Gérer les chantiers du pôle mécanique",
         "means": "Garage de préparation professionnel",
-        "constraints": "Gestion des délais et imprévus.",
+        "constraints": "Gestion des délais et des imprévus",
         "steps": [
           {
             "caption": "Enregistrer le chantier dans le planning"
           },
           {
-            "caption": "Agencer les chantiers afin d'optimiser le temps journalier et quotidien"
+            "caption": "Agencer les chantiers afin d'optimiser le temps de travail de chaque journée"
           },
           {
-            "caption": "Supervision des chantiers et participation"
+            "caption": "Superviser les chantiers et y participer"
           },
           {
-            "caption": "Réutilisation du chantier à des fins marketing"
+            "caption": "Réutiliser le chantier à des fins marketing"
           },
           {
-            "caption": "Rendu du projet au client"
+            "caption": "Rendre le projet au client"
           }
         ],
-        "highlights": "La chose qui m'a le plus marqué est comment gérer les clients et un planning. En effet, je pensais qu'accueillir un client, discuter et vendre son service ou produit n'était pas si compliqué. La gestion d'un planning demande une certaine expérience afin de pouvoir estimer de manière juste le temps passé sur un chantier. J'ai été en charge d'une petite équipe à la fin du stage, et faire du management est aussi compliqué que ce que je pensais.",
-        "skills": "Comment estimer correctement le temps de réalisation d'un projet client. J'ai aussi appris beaucoup de choses relatives à la gestion de l'humain tant vis-à-vis des clients que de l'équipe qui était à ma charge à la fin de mon stage.",
-        "liked": "J'ai particulièrement apprécié la confiance et la reconnaissance dont a fait preuve mon supérieur. Ainsi que de m'avoir laissé de plus en plus d'autonomie jusqu'à me donner la responsabilité d'une équipe."
+        "highlights": "Ce qui m'a le plus marqué, c'est la gestion des clients et du planning. Je pensais qu'accueillir un client, discuter avec lui et lui vendre un service ou un produit n'était pas si compliqué. La gestion d'un planning demande une certaine expérience pour estimer avec justesse le temps passé sur un chantier. J'ai eu la charge d'une petite équipe à la fin du stage, et le management est aussi compliqué que je le pensais.",
+        "skills": "À estimer correctement le temps de réalisation d'un projet client. J'ai aussi appris beaucoup de choses relatives à la gestion de l'humain tant vis-à-vis des clients que de l'équipe qui était à ma charge à la fin de mon stage.",
+        "liked": "J'ai particulièrement apprécié la confiance et la reconnaissance que m'a témoignées mon supérieur, ainsi que l'autonomie croissante qu'il m'a laissée, jusqu'à me confier la responsabilité d'une équipe."
       },
       "draft": false
     }

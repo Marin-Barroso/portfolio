@@ -55,7 +55,7 @@ export default function ContactForm() {
     return (
       <div className="glass max-w-xl p-6" role="status">
         <p className="text-gradient text-2xl font-extrabold">Message envoyé</p>
-        <p className="mt-2 text-fg">Merci {name}, je te réponds dès que possible à l&apos;adresse {email}.</p>
+        <p className="mt-2 text-fg">Merci {name}, je vous réponds dès que possible à l&apos;adresse {email}.</p>
         <button
           type="button"
           className="btn-ghost mt-5"
@@ -74,11 +74,11 @@ export default function ContactForm() {
     <>
       <form onSubmit={onSubmit} className="grid max-w-xl gap-4">
         <label className="grid gap-1.5">
-          <span className="text-sm font-semibold">Ton nom</span>
+          <span className="text-sm font-semibold">Votre nom</span>
           <input required value={name} onChange={(e) => setName(e.target.value)} className={field} autoComplete="name" />
         </label>
         <label className="grid gap-1.5">
-          <span className="text-sm font-semibold">Ton email</span>
+          <span className="text-sm font-semibold">Votre e-mail</span>
           <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={field} autoComplete="email" />
         </label>
         <label className="grid gap-1.5">
@@ -154,9 +154,9 @@ function MailChooser({ subject, body, onClose }: { subject: string; body: string
         onClick={(e) => e.stopPropagation()}
       >
         <h2 id="mail-chooser-title" className="text-xl font-extrabold">
-          Choisis ta messagerie
+          Choisissez votre messagerie
         </h2>
-        <p className="mt-2 text-sm text-soft">L&apos;envoi direct n&apos;a pas fonctionné. Ton message est prêt, il suffit de l&apos;envoyer depuis ta messagerie.</p>
+        <p className="mt-2 text-sm text-soft">L&apos;envoi direct n&apos;a pas fonctionné. Votre message est prêt, il suffit de l&apos;envoyer depuis votre messagerie.</p>
         <ul className="mt-5 grid gap-2">
           {options.map((o) => (
             <li key={o.label}>

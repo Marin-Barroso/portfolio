@@ -21,7 +21,7 @@ export const content = {
   hero: {
     name: "MARIN BARROSO",
     subtitle: "Mécanique automobile & préparation course",
-    tagline: "Étudiant en 3e année de Bachelor Sciences & Ingénierie – Arts et Métiers Bordeaux",
+    tagline: "Étudiant en 3e année de Bachelor en Sciences et Ingénierie – Arts et Métiers Bordeaux",
     badge: "Recherche une alternance – disponible",
     buttons: {
       missions: "Voir mes missions",
@@ -38,13 +38,13 @@ export const content = {
   competenceTable: [
     {
       activity: "Mécanique automobile",
-      savoir: "Fonctionnement d'un véhicule 4 roues léger",
+      savoir: "Fonctionnement d'un véhicule léger à quatre roues",
       savoirFaire: "Méthodologie de recherche de panne, entretien, révision et rapport client",
       savoirEtre: "Comportement à adopter en garage"
     },
     {
       activity: "Mécanique moto",
-      savoir: "Fonctionnement d'un moteur à explosion interne",
+      savoir: "Fonctionnement d'un moteur à combustion interne",
       savoirFaire: "Réparer et entretenir un véhicule",
       savoirEtre: "Contrôle des émotions"
     },
@@ -63,7 +63,7 @@ export const content = {
   ],
 
   about: {
-    text: "Passionné par le sport mécanique et la technologie depuis l'enfance, je combine une formation théorique solide avec une pratique concrète en atelier. Rigoureux et méthodique, je me suis formé à la mécanique automobile et moto à travers des stages professionnels et des projets personnels. Mon objectif est de travailler dans la préparation automobile pour la course, un domaine où je peux mettre à profit mes compétences techniques et mon goût pour le travail d'équipe. À l'aise aussi bien en atelier qu'au bureau, je recherche une alternance pour acquérir de l'expérience.",
+    text: "Passionné par les sports mécaniques et la technologie depuis l'enfance, je combine une formation théorique solide avec une pratique concrète en atelier. Rigoureux et méthodique, je me suis formé à la mécanique automobile et moto à travers des stages professionnels et des projets personnels. Mon objectif est de travailler dans la préparation automobile pour la course, un domaine où je peux mettre à profit mes compétences techniques et mon goût pour le travail d'équipe. À l'aise aussi bien en atelier qu'au bureau, je recherche une alternance pour acquérir de l'expérience.",
     interests: [
       "Mécanique automobile",
       "Jiu-Jitsu brésilien (2 ans)",
@@ -85,8 +85,8 @@ export const content = {
     linkedin: "https://www.linkedin.com/in/marin-barroso-35ab832a5/",
     availability: "Disponible pour une alternance",
     emailSubject: "Opportunité d'alternance – Portfolio de Marin Barroso",
-    emailBody: "Bonjour Marin, j'ai découvert votre portfolio et souhaiterais échanger avec vous au sujet de…",
-    whatsappMessage: "Bonjour Marin, j'ai découvert votre portfolio et souhaiterais échanger avec vous au sujet d'une opportunité."
+    emailBody: "Bonjour Marin, j'ai découvert votre portfolio et je souhaiterais échanger avec vous au sujet de…",
+    whatsappMessage: "Bonjour Marin, j'ai découvert votre portfolio et je souhaiterais échanger avec vous au sujet d'une opportunité."
   },
 
   alternance: {
