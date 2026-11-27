@@ -264,10 +264,11 @@ export default function PrintPortfolio() {
 
       {/* 5 à 8. Fiches mission */}
       {missions.map((m, i) => (
-        <Page key={m.slug} id={m.slug} large section={`Mission ${i + 1} / ${missions.length}`}>
+        // Plus de 5 étapes : texte normal et étapes compactes sur deux colonnes, pour tenir sur moins de pages
+        <Page key={m.slug} id={m.slug} large={m.details.steps.length <= 5} section={`Mission ${i + 1} / ${missions.length}`}>
           <div>
             <p className="kicker">
-              Mission {i + 1} · {m.type === "Pro" ? "Stage en entreprise" : "Projet personnel"}
+              Mission {i + 1} · {m.type === "Pro" ? "Mission en entreprise" : "Projet personnel"}
             </p>
             <h2 className="title">{m.title}</h2>
             <p className="muted" style={{ marginTop: "2mm" }}>
@@ -296,14 +297,25 @@ export default function PrintPortfolio() {
           </div>
           <div>
             <p className="h3">Les étapes</p>
-            <ol className="grid3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {m.details.steps.map((s, j) => (
-                <li key={j} className="box">
-                  <p className="step-num">{j + 1}</p>
-                  <p style={{ marginTop: "2mm" }}>{s.caption}</p>
-                </li>
-              ))}
-            </ol>
+            {m.details.steps.length > 5 ? (
+              <ol className="grid2 steps-compact" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {m.details.steps.map((s, j) => (
+                  <li key={j} className="box">
+                    <span className="step-num">{j + 1}</span>
+                    <span>{s.caption}</span>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <ol className="grid3" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {m.details.steps.map((s, j) => (
+                  <li key={j} className="box">
+                    <p className="step-num">{j + 1}</p>
+                    <p style={{ marginTop: "2mm" }}>{s.caption}</p>
+                  </li>
+                ))}
+              </ol>
+            )}
           </div>
           {/* Textes longs : une case par ligne en pleine largeur plutôt que trois colonnes étroites */}
           <div className={longTexts(m) ? "list" : "grid3"}>
@@ -331,7 +343,7 @@ export default function PrintPortfolio() {
               {m.photos.slice(0, 2).map((p) => (
                 <figure key={p.image} style={{ margin: 0 }}>
                   {/* eslint-disable-next-line @next/next/no-img-element -- page imprimée en PDF */}
-                  <img src={p.image} alt={p.caption || m.title} style={{ width: "100%", height: "42mm", objectFit: "cover", borderRadius: "3mm" }} />
+                  <img src={p.image} alt={p.caption || m.title} style={{ width: "100%", height: "42mm", objectFit: "contain", background: "var(--tint)", borderRadius: "3mm" }} />
                   {p.caption && (
                     <figcaption className="muted" style={{ fontSize: "8.5pt", marginTop: "1.5mm" }}>
                       {p.caption}

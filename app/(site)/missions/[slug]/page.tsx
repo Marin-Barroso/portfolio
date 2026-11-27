@@ -25,7 +25,7 @@ export default async function MissionPage({ params }: { params: Promise<{ slug: 
     <PageShell
       crumbs={[{ label: "Missions", href: "/missions/" }, { label: m.title }]}
       title={m.title}
-      intro={`Mission ${index + 1} · ${m.type === "Pro" ? "Stage" : "Projet perso"} · ${m.location}`}
+      intro={`Mission ${index + 1} · ${m.type === "Pro" ? "En entreprise" : "Projet perso"} · ${m.location}`}
     >
       <div className="grid gap-5 lg:grid-cols-[2fr_1fr]">
         <Card>
@@ -55,6 +55,17 @@ export default async function MissionPage({ params }: { params: Promise<{ slug: 
         </Card>
       </div>
 
+      {m.details.context && (
+        <Card className="mt-5">
+          <p className="label-mono mb-2">Contexte</p>
+          {m.details.context.split(/\n\s*\n/).map((para, i) => (
+            <p key={i} className={`text-fg${i > 0 ? " mt-3" : ""}`}>
+              {para}
+            </p>
+          ))}
+        </Card>
+      )}
+
       <h2 className="mb-4 mt-10 text-xl font-extrabold">Les étapes</h2>
       <ol className="grid gap-4 md:grid-cols-3">
         {m.details.steps.map((s, i) => (
@@ -74,8 +85,9 @@ export default async function MissionPage({ params }: { params: Promise<{ slug: 
             {m.photos.map((p) => (
               <figure key={p.image} className="glass overflow-hidden !p-0">
                 <a href={asset(p.image)} target="_blank" rel="noopener noreferrer">
+                  {/* Image entière (object-contain) : les captures d'écran ne sont pas rognées */}
                   {/* eslint-disable-next-line @next/next/no-img-element -- export statique, images déjà optimisées à l'envoi */}
-                  <img src={asset(p.image)} alt={p.caption || m.title} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  <img src={asset(p.image)} alt={p.caption || m.title} loading="lazy" className="aspect-[4/3] w-full bg-black/40 object-contain" />
                 </a>
                 {p.caption && <figcaption className="px-4 py-3 text-sm text-soft">{p.caption}</figcaption>}
               </figure>

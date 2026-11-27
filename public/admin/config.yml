@@ -59,6 +59,7 @@ collections:
                   - { name: mission, label: Mission, hint: "Une phrase : ce qu'on t'a confié." }
                   - { name: means, label: Moyens, hint: "Outils, atelier, encadrement…" }
                   - { name: constraints, label: Contraintes, hint: "Délais, budget, débit, météo…" }
+                  - { name: context, label: Contexte, widget: text, required: false, hint: "Facultatif. Quelques phrases : d'où vient la mission, pour qui, détails des contraintes. Affiché sur la fiche du site, pas dans le PDF." }
                   - { name: steps, label: Étapes, label_singular: étape, widget: list, fields: [{ name: caption, label: Étape }], hint: "3 à 5 étapes, une phrase courte chacune." }
                   - { name: highlights, label: Faits marquants, widget: text, hint: "2 à 3 phrases : ce qui t'a surpris ou marqué." }
                   - { name: skills, label: "Ce que j'ai appris", widget: text, hint: "2 à 3 phrases : compétences et savoir-être acquis." }

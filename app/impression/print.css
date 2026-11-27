@@ -360,3 +360,20 @@ tr {
 .page.large .box {
   padding: 5mm 6mm;
 }
+
+/* Fiches mission à plus de 5 étapes : numéro à gauche du texte, deux colonnes */
+.steps-compact {
+  gap: 2.5mm 4mm;
+}
+
+.steps-compact .box {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  padding: 2.5mm 4mm;
+}
+
+.steps-compact .step-num {
+  font-size: 14pt;
+  flex: none;
+}

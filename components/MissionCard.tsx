@@ -22,7 +22,7 @@ export default function MissionCard({ mission: m, detailed = false }: { mission:
             {m.location}
             {detailed && ` · ${m.period}`}
           </p>
-          {detailed && <p className="mt-3 text-fg">{m.details.mission}</p>}
+          {detailed && <p className="mt-3 line-clamp-3 text-fg">{m.details.mission}</p>}
           <Tags items={m.tags} />
           <p className="mt-auto pt-4 text-sm font-semibold text-aqua">Voir la fiche →</p>
         </div>

@@ -93,6 +93,7 @@
       "level": "Pratiqué en stage",
       "category": "langues-savoir-etre",
       "missions": [
+        "mon-planning-outil-planification",
         "gestion-pole-mecanique-speed-motors"
       ],
       "experiences": [
@@ -118,6 +119,33 @@
       "experiences": [
         "Stage découverte en CAO"
       ]
+    },
+    {
+      "name": "Analyse du besoin et cahier des charges",
+      "level": "Pratiqué en entreprise",
+      "category": "langues-savoir-etre",
+      "missions": [
+        "mon-planning-outil-planification"
+      ],
+      "experiences": []
+    },
+    {
+      "name": "Amélioration continue (lean)",
+      "level": "Pratiqué en entreprise",
+      "category": "langues-savoir-etre",
+      "missions": [
+        "mon-planning-outil-planification"
+      ],
+      "experiences": []
+    },
+    {
+      "name": "Rédaction de consignes pour une IA (prompts)",
+      "level": "Pratiqué en entreprise",
+      "category": "langues-savoir-etre",
+      "missions": [
+        "mon-planning-outil-planification"
+      ],
+      "experiences": []
     }
   ],
   "languages": [

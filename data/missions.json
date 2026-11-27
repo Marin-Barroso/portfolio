@@ -1,6 +1,96 @@
 {
   "missions": [
     {
+      "slug": "mon-planning-outil-planification",
+      "title": "Conception de « Mon planning », un outil de planification",
+      "type": "Pro",
+      "location": "Proditec, Pessac",
+      "period": "23/11 – 30/11/2026",
+      "duration": "8 jours : 5 jours de développement et de tests en conditions réelles, puis présentation à l'équipe",
+      "year": "2026",
+      "start": "2026-11",
+      "thumbnail": "/images/missions/mon-planning-accueil.webp",
+      "tags": [
+        "Amélioration continue",
+        "Lean",
+        "Intelligence artificielle",
+        "Outil numérique"
+      ],
+      "skills": [
+        "Analyse du besoin",
+        "Création d'un cahier des charges",
+        "Priorisation",
+        "Tests en conditions réelles",
+        "Gestion de projet en amélioration continue",
+        "Rédaction de consignes efficaces pour une IA (prompts)"
+      ],
+      "result": "Environ 20 minutes gagnées chaque soir sur la préparation du lendemain, et 30 minutes à 1 heure gagnées en moyenne par jour, soit environ 2 h 30 à 5 heures par semaine.",
+      "details": {
+        "post": "Amélioration continue",
+        "mission": "Concevoir un outil qui centralise toutes les informations de ma journée de travail (tâches, échéances, rendez-vous et documents) pour savoir à tout moment quoi faire, quand, et par quoi commencer.",
+        "means": "Claude (IA d'Anthropic), Google Agenda, Google Drive, Notion Calendar",
+        "constraints": "Aucun coût, confidentialité des données de l'entreprise, accès sur trois appareils, IA sous contrôle, outil adaptable par l'équipe (délai libre).",
+        "context": "Le projet est né de la matinée « amélioration des conditions de travail » organisée chaque lundi, dans le cadre d'une démarche d'amélioration lean. Au départ, il s'agissait de simplifier mon propre travail : je perdais chaque soir les 15 dernières minutes de la journée à refaire le planning du lendemain, avec des oublis. L'outil est présenté à l'équipe le 30 novembre et pourra être repris par mes collègues pour faciliter leur propre travail.\n\nCôté contraintes, l'outil ne stocke que le nom des fichiers de travail, jamais leur contenu, et l'agenda professionnel n'y est visible qu'en « libre / occupé ». Il fonctionne sur le poste de travail, sur mon ordinateur personnel et sur téléphone. L'IA intégrée propose, mais ne modifie jamais rien sans mon accord.",
+        "steps": [
+          {
+            "caption": "Analyser le besoin : identifier ce qui faisait perdre du temps et causait des oublis"
+          },
+          {
+            "caption": "Rédiger le cahier des charges : objectifs, contraintes, fonctions attendues et fonctions écartées"
+          },
+          {
+            "caption": "Créer la base de l'outil : missions, tâches, priorités, échéances et agenda"
+          },
+          {
+            "caption": "Ajouter les routines quotidiennes : journée proposée automatiquement chaque matin, bilan du soir, suivi des tâches en pause ou en attente"
+          },
+          {
+            "caption": "Auditer l'outil et corriger les défauts pour fiabiliser la synchronisation et sécuriser les données"
+          },
+          {
+            "caption": "Ajuster l'outil au fil de l'usage réel : documents joints, indisponibilités, chronomètre du temps réel passé par tâche"
+          },
+          {
+            "caption": "Préparer la présentation de l'outil à l'équipe"
+          }
+        ],
+        "highlights": "Créer de A à Z un outil qui réponde vraiment au besoin de centralisation des informations dans un cadre professionnel s'est révélé plus complexe que prévu : chaque usage réel faisait apparaître un nouveau besoin. Il a fallu 41 versions en 5 jours, chacune testée le jour même dans ma journée de travail, avant d'obtenir un outil stable. Un audit réalisé le deuxième jour a permis de corriger 26 défauts sur 29 en une seule version.",
+        "skills": "J'ai appris qu'un besoin en fait souvent apparaître un autre, et qu'on n'a jamais fini d'améliorer un outil de travail, que ce soit en ergonomie ou en efficacité.",
+        "liked": "J'ai aimé la recherche du besoin, et surtout le temps que l'outil m'a fait gagner dans mon travail, pendant et après la période de test."
+      },
+      "photos": [
+        {
+          "image": "/images/missions/mon-planning-accueil.webp",
+          "caption": "Écran d'accueil : la journée, les retards, le prochain rendez-vous et les échéances à venir"
+        },
+        {
+          "image": "/images/missions/mon-planning-journee-proposee-ia.webp",
+          "caption": "Journée proposée par l'IA, à valider avant application"
+        },
+        {
+          "image": "/images/missions/mon-planning-missions.webp",
+          "caption": "Missions, sous-tâches, priorités et dossiers"
+        },
+        {
+          "image": "/images/missions/mon-planning-agenda-semaine.webp",
+          "caption": "Agenda de la semaine en vue horaire, avec horaires, pause et indisponibilité"
+        },
+        {
+          "image": "/images/missions/mon-planning-bilan-du-soir.webp",
+          "caption": "Bilan du soir"
+        },
+        {
+          "image": "/images/missions/mon-planning-stats.webp",
+          "caption": "Statistiques et comparaison entre temps réel et temps estimé"
+        },
+        {
+          "image": "/images/missions/mon-planning-mobile.webp",
+          "caption": "Version téléphone"
+        }
+      ],
+      "draft": false
+    },
+    {
       "slug": "revision-peugeot-106",
       "title": "Révision complète sur une Peugeot 106",
       "type": "Pro",

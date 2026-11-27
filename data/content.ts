@@ -4,7 +4,14 @@ import skillsData from "./skills.json";
 
 // Photos, vignette et résultat chiffré sont facultatifs : une mission sans eux n'a pas ces champs dans le JSON
 export type MissionPhoto = { image: string; caption?: string };
-export type Mission = (typeof missionsData.missions)[number] & { photos?: MissionPhoto[]; thumbnail?: string; result?: string };
+// Le contexte (details.context) est lui aussi facultatif : affiché sur la fiche du site, pas dans le PDF
+type MissionData = (typeof missionsData.missions)[number];
+export type Mission = Omit<MissionData, "details"> & {
+  details: MissionData["details"] & { context?: string };
+  photos?: MissionPhoto[];
+  thumbnail?: string;
+  result?: string;
+};
 
 // Missions publiées, de la plus récente à la plus ancienne (date de début AAAA-MM saisie dans l'admin).
 // Le tri est stable : à date égale, l'ordre de l'admin est conservé.
