@@ -13,7 +13,7 @@ export default function AlternancePage() {
       intro={content.alternance.intro}
     >
       <Card>
-        <KeyValues rows={[...content.alternance.details, { label: "Disponibilité", value: content.contact.availability }]} />
+        <KeyValues rows={content.alternance.details} />
       </Card>
       <div className="mt-8 flex flex-wrap gap-3">
         <Link href="/contact/" className="btn-neon">

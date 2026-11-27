@@ -14,7 +14,7 @@ const { hero, contact, about, skills, timeline, missions, competenceTable, skill
 // Une fiche mission peut tenir sur plusieurs pages : la numérotation est faite par Chrome
 // (marges @page de print.css), le sommaire renvoie donc vers des liens internes
 const SUMMARY = [
-  { label: "Profil et recherche d'alternance", id: "profil" },
+  { label: "Profil et alternance", id: "profil" },
   { label: "Curriculum vitae", id: "cv" },
   { label: "Compétences", id: "competences" },
   ...missions.map((m, i) => ({ label: `Mission ${i + 1} · ${m.title}`, id: m.slug })),
@@ -73,7 +73,7 @@ export default function PrintPortfolio() {
           <p style={{ marginTop: "8mm", fontSize: "16pt", fontWeight: 600 }}>{hero.subtitle}</p>
           <p style={{ marginTop: "3mm", color: "#c4c4e8", maxWidth: "140mm" }}>{hero.tagline}</p>
           <p className="badge" style={{ marginTop: "8mm" }}>
-            Recherche une alternance 2026-2027 · contrat de professionnalisation
+            En alternance 2026-2027 · contrat de professionnalisation
           </p>
         </div>
         <div className="grid3" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
@@ -112,7 +112,7 @@ export default function PrintPortfolio() {
         </div>
         <p style={{ fontSize: "11pt" }}>{about.text}</p>
         <div className="box tint">
-          <p className="h3">Ce que je recherche</p>
+          <p className="h3">Mon alternance 2026-2027</p>
           <dl className="kv">
             {alternance.details.map((d) => (
               <div key={d.label} style={{ display: "contents" }}>
@@ -120,8 +120,6 @@ export default function PrintPortfolio() {
                 <dd>{d.value}</dd>
               </div>
             ))}
-            <dt>Disponibilité</dt>
-            <dd>{contact.availability}</dd>
           </dl>
         </div>
         <div className="grid2">

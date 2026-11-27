@@ -15,7 +15,7 @@ type Status = "idle" | "sending" | "sent";
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("Alternance");
+  const [subject, setSubject] = useState("Question sur un projet");
   const [message, setMessage] = useState("");
   const [honey, setHoney] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -84,9 +84,8 @@ export default function ContactForm() {
         <label className="grid gap-1.5">
           <span className="text-sm font-semibold">Sujet</span>
           <select value={subject} onChange={(e) => setSubject(e.target.value)} className={`${field} [&>option]:bg-panel`}>
-            <option>Alternance</option>
-            <option>Stage</option>
             <option>Question sur un projet</option>
+            <option>Proposition professionnelle</option>
             <option>Autre</option>
           </select>
         </label>

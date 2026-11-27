@@ -29,7 +29,7 @@ export const content = {
     name: "MARIN BARROSO",
     subtitle: "Mécanique automobile & préparation course",
     tagline: "Étudiant en 3e année de Bachelor en Sciences et Ingénierie – Arts et Métiers Bordeaux",
-    badge: "Recherche une alternance – disponible",
+    badge: "En alternance 2026-2027 – contrat de professionnalisation",
     buttons: {
       missions: "Voir mes missions",
       contact: "Me contacter"
@@ -70,7 +70,7 @@ export const content = {
   ],
 
   about: {
-    text: "Passionné par les sports mécaniques et la technologie depuis l'enfance, je combine une formation théorique solide avec une pratique concrète en atelier. Rigoureux et méthodique, je me suis formé à la mécanique automobile et moto à travers des stages professionnels et des projets personnels. Mon objectif est de travailler dans la préparation automobile pour la course, un domaine où je peux mettre à profit mes compétences techniques et mon goût pour le travail d'équipe. À l'aise aussi bien en atelier qu'au bureau, je recherche une alternance pour acquérir de l'expérience.",
+    text: "Passionné par les sports mécaniques et la technologie depuis l'enfance, je combine une formation théorique solide avec une pratique concrète en atelier. Rigoureux et méthodique, je me suis formé à la mécanique automobile et moto à travers des stages professionnels et des projets personnels. Mon objectif est de travailler dans la préparation automobile pour la course, un domaine où je peux mettre à profit mes compétences techniques et mon goût pour le travail d'équipe. À l'aise aussi bien en atelier qu'au bureau, je poursuis ma 3e année de Bachelor en alternance pour acquérir de l'expérience en entreprise.",
     interests: [
       "Mécanique automobile",
       "Jiu-Jitsu brésilien (2 ans)",
@@ -90,18 +90,16 @@ export const content = {
     contactButton: "M'écrire",
     cvFile: "/cv-marin-barroso.pdf",
     linkedin: "https://www.linkedin.com/in/marin-barroso-35ab832a5/",
-    availability: "Disponible pour une alternance",
-    emailSubject: "Opportunité d'alternance – Portfolio de Marin Barroso",
+    emailSubject: "Contact – Portfolio de Marin Barroso",
     emailBody: "Bonjour Marin, j'ai découvert votre portfolio et je souhaiterais échanger avec vous au sujet de…",
     whatsappMessage: "Bonjour Marin, j'ai découvert votre portfolio et je souhaiterais échanger avec vous au sujet d'une opportunité."
   },
 
   alternance: {
-    intro: "En 3e année de Bachelor, la formation se poursuit en contrat de professionnalisation. Je cherche une entreprise pour l'année 2026-2027.",
+    intro: "En 3e année de Bachelor, la formation se poursuit en contrat de professionnalisation, en alternance entre l'école et l'entreprise, pour l'année 2026-2027.",
     details: [
       { label: "Contrat", value: "Contrat de professionnalisation (Bachelor 3e année)" },
-      { label: "Formation", value: "Bachelor Sciences et Ingénierie, Arts et Métiers Bordeaux-Talence" },
-      { label: "Mobilité", value: "Bordeaux" }
+      { label: "Formation", value: "Bachelor Sciences et Ingénierie, Arts et Métiers Bordeaux-Talence" }
     ]
   },
 
